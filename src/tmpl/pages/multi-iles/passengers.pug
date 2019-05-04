@@ -1,0 +1,83 @@
+include ../../mixins/mixin-input
+include ../../mixins/mixin-select
+include ../../mixins/mixin-radio
+include ../../mixins/mixin-checkbox
+
+section.fret-section.fret-contact-info.js-form-step.step-2
+    - var islands = ['Tahiti (PPT)', 'Ahe (AHE)', 'Anaa (AAA)', 'Apataki(APK)', 'Aratika (RKA)', 'Arutua (AXR)', 'Hiva Oa (AUQ)']
+    - var options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6']
+    .container
+      .section-inner
+        .white-block.fret-block
+          .fret-block-inner
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-passenger
+              span.block-title__text Passagers
+
+            .col-full.fret-form-item.vol-intro
+              span Complétez les informations des passagers.
+            
+            //- Passenger
+            .passenger-groups
+              .form-group.form-group--fret.multi-iles-group.passenger-group.passenger-group--init
+                h4.form-group__title Passager 1
+                .row.form-group-inner.multi-iles-group-inner.passenger-group-inner
+                  .fret-form-item.fret-form-item--passenger
+                    +select-placeholder('civility', 'Civilité', options)
+                  .fret-form-item.fret-form-item--passenger
+                    +input-animation('multi-iles-name', 'Nom')
+                  .fret-form-item.fret-form-item--passenger
+                    +input-animation('multi-iles-first-name', 'Prénom')
+                  .fret-form-item.fret-form-item--passenger
+                    +input-animation('multi-iles-birthday', 'Date de naissance')
+
+            .col-full.fret-form-item.vol-intro
+              h5.vol-intro__title Vols internationaux
+              span L'information sur les dates/numéros de vols d'arrivée et départ internationaux nous permet de gérer au mieux vos correspondances avec les vols Air Tahiti, notamment en cas de retard ou de modifications des vols (internationaux et domestiques).
+
+            .form-group.multi-iles-group.international-flights-wrapper
+              .row.form-group-inner.multi-iles-group-inner.international-flights
+                .fret-form-item
+                .fret-form-item.fret-form-item--text
+                  span Date
+                .fret-form-item.fret-form-item--text
+                  span aéroport de départ / d’arrivée 
+                .fret-form-item.fret-form-item--text
+                  span nom de la compagnie
+                .fret-form-item.fret-form-item--text
+                  span numéro de vol
+              .row.form-group-inner.multi-iles-group-inner.international-flights
+                .fret-form-item.fret-form-item--text
+                  span arrivée en polynésie
+                .fret-form-item
+                  +input-animation-datepicker('international-flight-arrive', '')
+                .fret-form-item
+                  +select-placeholder('international-flight-airport', 'Faites votre choix', options)
+                .fret-form-item
+                  +input-animation('international-flight-company', '')
+                .fret-form-item
+                  +input-animation('international-flight-number', '')
+              .row.form-group-inner.multi-iles-group-inner.international-flights
+                .fret-form-item.fret-form-item--text
+                  span départ de polynésie
+                .fret-form-item
+                  +input-animation-datepicker('international-flight-arrive-2', '')
+                .fret-form-item
+                  +select-placeholder('international-flight-airport', 'Faites votre choix', options)
+                .fret-form-item
+                  +input-animation('international-flight-company', '')
+                .fret-form-item
+                  +input-animation('international-flight-number', '')
+
+
+            .form-group.package-description__buttons.passenger-group-handle-buttons
+              button.button-with-icon.button-with-icon--add.js-add-passenger-group Ajouter un passager
+
+            //- Buttons
+            .fret-form-buttons
+              .col-lg-3.col-md-3.fret-form-item
+                button.form-btn.form-btn--green(data-to-step='step-1') Retour
+              .col-lg-6.col-md-6
+              .col-lg-3.col-md-3.fret-form-item
+                button.form-btn(data-to-step='step-3') Suivant
+              

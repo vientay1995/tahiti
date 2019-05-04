@@ -1,0 +1,7 @@
+mixin breadcrumbs(items, preClass)
+  .breadcrumbs
+    ul.breadcrumb-list
+      each item, index in items
+        li.breadcrumb-item(class= preClass + (index+1))
+          span.breadcrumb-item__link= item
+            i.arrow-icon

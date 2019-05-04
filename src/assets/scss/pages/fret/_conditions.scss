@@ -1,0 +1,47 @@
+.conditions {
+  padding-bottom: 30px;
+  background: $white;
+}
+
+.condition-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.condition-item {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3);
+  padding: 0 25px;
+
+  @include bp(mob) {
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 15px; 
+    color: $block-title-color;
+    font-family: $ubuntu-medium;
+    font-size: 23px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      height: 1px;
+      background: $green;
+    }
+  }
+
+  &__description {
+    padding-bottom: 20px;
+    color: $intro-text-color;
+    font-size: 18px;
+  }
+}

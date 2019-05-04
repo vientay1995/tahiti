@@ -1,0 +1,8 @@
+mixin listing-block(title, items)
+  .listing-block
+    h6.destination-block__title.listing-block__title= title
+    .listing-block-wrapper
+      each item in items
+        .listing-block__item
+          i.listing-block__item__icon
+          span.listing-block__item__text= item

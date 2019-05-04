@@ -1,0 +1,83 @@
+include ../../mixins/mixin-input
+include ../../mixins/mixin-select
+include ../../mixins/mixin-radio
+include ../../mixins/mixin-checkbox
+
+section.fret-section.fret-contact-info.js-form-step.step-3
+    - var islands = ['Tahiti (PPT)', 'Ahe (AHE)', 'Anaa (AAA)', 'Apataki(APK)', 'Aratika (RKA)', 'Arutua (AXR)', 'Hiva Oa (AUQ)']
+    - var options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6']
+    .container
+      .section-inner
+        .white-block.fret-block
+          .fret-block-inner
+            
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-contact
+              span.block-title__text Contact de référence
+
+            .col-full.fret-form-item.vol-intro
+              span Indiquez la personne à contacter en cas de besoin.
+            
+            //- Contact
+            .form-group.multi-iles-group.contact-group
+              .row.form-group-inner.multi-iles-group-inner.contact-group-inner
+                .col-lg-2.col-md-2.fret-form-item.fret-form-item--contact
+                  +select-placeholder('multi-iles-contact-civility', 'Civilité', options)
+                .col-lg-5.col-md-5.fret-form-item.fret-form-item--contact
+                  +input-animation('multi-iles-name-adule-1', 'Nom adulte 1')
+                .col-lg-5.col-md-5.fret-form-item.fret-form-item--contact
+                  +input-animation('multi-iles-first-name-adule-1', 'Prénom adulte 1')
+                .col-lg-6.col-md-6.fret-form-item.fret-form-item--contact
+                  +select-placeholder('country-of-residence', 'Pays de résidence', options)
+                .col-lg-6.col-md-6.fret-form-item.fret-form-item--contact
+                  +input-animation('multi-iles-contact-email', 'Email')
+            
+            .col-full.fret-form-item.vol-intro
+              span Veillez indiquer au moins un numéro de téléphone ou vos hébergements pour vous joindre pendant votre voyage.
+            
+            .form-group.form-group--fret.multi-iles-group.contact-table-form
+              .row.form-group-inner.multi-iles-group-inner.contact-table-form-inner
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item.fret-form-item--contact-text
+                  span téléphone
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item.fret-form-item--contact-text
+                  span hébergement
+
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item.fret-form-item--contact-text
+                  span Tahiti
+                  span.__number +689
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item
+                  +input-animation('multi-iles-contact-telephone-1', '')
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('multi-iles-contact-accommodation-1', '')
+
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item.fret-form-item--contact-text
+                  span bora bora
+                  span.__number +689
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item
+                  +input-animation('multi-iles-contact-telephone-2', '')
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item
+                  +input-animation('multi-iles-contact-accommodation-2', '')
+
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item.fret-form-item--contact-text
+                  span rangiroa
+                  span.__number +689
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item
+                  +input-animation('multi-iles-contact-telephone-3', '')
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.fret-form-item
+                  +input-animation('multi-iles-contact-accommodation-3', '')
+
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-comment
+              span.block-title__text Commentaire
+            
+            .col-full.fret-form-item
+              textarea.textarea-item
+             
+            //- Buttons
+            .multi-iles-buttons
+              .fret-form-item
+                button.form-btn.form-btn--green(data-to-step='step-2') Retour
+              .fret-form-item
+                button.form-btn(data-to-step='step-4') Envoyer la demande
+              

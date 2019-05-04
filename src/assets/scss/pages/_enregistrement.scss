@@ -1,0 +1,264 @@
+.enregistrement-section {
+  padding-top: 70px;
+  background: $white;
+
+  @include bp(mob) {
+    padding-top: 30px;
+  }
+
+  &-inner {
+    @include bp(desktop) {
+      padding: 0 15px;
+    }
+  }
+}
+
+.enregistrement {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 60px 0;
+  background: url(../images/bgs/enregistrement-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  @include bp(tab) {
+    padding: 30px 0;
+  }
+
+  @include bp(mob) {
+    margin-top: 20px;
+    padding: 30px 0;
+  }
+
+  &-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 68%;
+
+    @include bp(tab) {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    @include bp(mob) {
+      flex-direction: column;
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 15px);
+    padding: 30px;
+    background-color: $white;
+
+    @include bp(tab) {
+      width: calc(50% - 7px);
+    }
+
+    @include bp(mob) {
+      margin: 10px 0;
+      width: 100%;
+    }
+
+    &__description {
+      flex-grow: 2;
+      font-family: $ubuntu-light;
+      font-size: 14px;
+      text-align: justify;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button-with-icon {
+      margin: 30px 0;
+    }
+  }
+
+  .block-title {
+    display: block;
+    padding-bottom: 25px;
+    font-size: 22px;
+    text-align: center;
+
+    @include bp(mob) {
+      font-size: 20px;
+    }
+  }
+}
+
+.enregistrment__item__form {
+  display: flex;
+  flex-direction: column;
+
+  .form-fields {
+    flex-grow: 2;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-btn {
+    margin-top: 30px;
+  }
+
+  .form-txt {
+    font-family: $ubuntu-light;
+  }
+
+  .note-text {
+    padding-top: 10px;
+  }
+}
+
+.enregistrement-footer {
+  display: flex;
+  align-items: center;
+  background: $icon-color-2;
+  padding: 30px 16%;
+  color: $white;
+
+  @include bp(tab) {
+    padding: 30px 15px;
+  }
+
+  @include bp(mob) {
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-grow: 2;
+
+    @include bp(mob) {
+      padding-bottom: 15px;
+    }
+  }
+
+  &__description {
+    flex-grow: 2;
+    padding: 0 20px;
+    color: $white;
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: justify;
+  }
+
+  .button-with-icon--dark:hover {
+    border-color: $white;
+  }
+}
+
+.enregistrement-articles {
+  .block-title {
+    justify-content: center;
+  }
+
+  .block-intro {
+    position: relative;
+    width: 68%;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+
+    @include bp(mob) {
+      width: 90%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background-color: $icon-color-2;
+    }
+  }
+
+  .articles {
+    margin: 50px -20px;
+
+    &-inner {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  }
+
+  .article-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(100% / 3);
+    padding: 20px;
+
+    @include bp(mob) {
+      width: 100%;
+    }
+
+    &__image {
+      text-align: center;
+
+      img {
+        max-width: 90%;
+      }
+    }
+
+    &__title {
+      position: relative;
+      transition: 0.3s;
+      margin-bottom: 30px;
+      padding: 40px 0 20px;
+      text-align: center;
+
+      @include bp(mob) {
+        padding: 25px 0 15px;
+      }
+      
+      &::before {
+        @extend .block-intro::before;
+        transition: 0.3s;
+        width: 70px;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: $icon-color-2;
+
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+
+    &__description {
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: $description-color;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button-with-icon--dark {
+      padding: 10px 40px 10px 15px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.main-nav
+  .container
+    .main-nav-inner
+      h1.main-nav__logo
+        a.main-nav__link(href='#')
+          img.main-nav__logo__img(src='assets/images/logo.png' alt='#')
+          span.main-nav__logo__text Air Tahiti
+          
+      button.main-nav__button
+        span.main-nav__button__icon
+
+      .main-nav__overlay  
+
+      ul.main-nav__list
+        li.main-nav__item
+          a.main-nav__item__link(href='#') Réserver et gérertatatat
+          include ./main-nav-submenu
+
+        li.main-nav__item
+          a.main-nav__item__link(href='#') Préparer
+          include ./main-nav-submenu
+
+        li.main-nav__item
+          a.main-nav__item__link(href='#') Voyager
+          include ./main-nav-submenu
+
+        li.main-nav__item
+          a.main-nav__item__link(href='#') Destinations
+          include ./main-nav-submenu
+
+        li.main-nav__item
+          a.main-nav__item__link(href='#') Notre compagnie
+          include ./main-nav-submenu
+
+               

@@ -1,0 +1,157 @@
+.vol {
+  &-intro {
+    padding-bottom: 40px;
+    font-size: 17px;
+    text-align: center;
+
+    a {
+      color: $description-color;
+      text-decoration: underline;
+    }
+
+    &__title {
+      padding-bottom: 30px;
+      color: $green;
+      font-size: 17px;
+    }
+  }
+
+  &-group {
+    position: relative;
+  }
+}
+
+.multi-iles-group {
+  position: relative;
+  &-inner {
+    margin: 15px -10px 0;
+  }
+}
+
+.vol-radio-group {
+  display: flex;
+}
+
+.vol-radios {
+  display: flex;
+
+  .radio-item {
+    padding: 0 15px;
+  }
+}
+
+.vol-checkbox-group {
+  display: flex;
+
+  &__link {
+    padding-left: 30px;
+    color: $green;
+    font-family: $ubuntu-medium;
+  }
+}
+
+.vol-partners {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vol-partner {
+  img {
+    width: 42px;
+  }
+}
+
+// Passengers
+.passenger-group {
+  &-inner {
+    padding: 0 8px;
+  }
+}
+
+.fret-form-item--passenger {
+  &:not(:first-child) {
+    flex-grow: 2;
+  }
+}
+
+.fret-form-item--contact-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: $ubuntu-regular;
+  font-size: 16px;
+
+  .__number {
+    color: $description-color;
+    font-family: $ubuntu-light;
+    font-size: 14px;
+  }
+}
+
+.international-flights {
+  padding: 0 10px;
+
+  @include bp(mob) {
+    width: 800px;
+  }
+
+  &-wrapper {
+    @include bp(mob) {
+      overflow-x: auto; 
+    }
+  }
+
+  .fret-form-item {
+    padding: 0 2px;
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(5) {
+      width: 18%;
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      width: 23%;
+    }
+
+    &--text {
+      color: $black;
+      font-family: $ubuntu-regular;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.passenger-group-handle-buttons {
+  padding: 40px 0 20px;
+}
+
+.multi-iles-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  .form-btn {
+    min-width: 180px;
+  }
+}
+
+.contact-table-form {
+  @include bp(mob) {
+    overflow-x: auto;
+  }
+
+  &-inner {
+    margin: 0;
+    
+    @include bp(mob) {
+      width: 800px;
+
+      .fret-form-item {
+        width: 33%;
+      }
+    }
+  }
+}

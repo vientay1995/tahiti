@@ -1,0 +1,38 @@
+include ../../mixins/mixin-input.pug
+
+section.enregistrement-section
+  .container
+    .enregistrement-section-inner
+      .block-intro
+        span Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magvoluptatem.
+      
+      .enregistrement
+        .enregistrement-inner
+          .enregistrement__item
+            h3.block-title
+              span.block-title__text Rechercher une réservation
+            form.enregistrment__item__form
+              .form-fields
+                +input-animation('input-1', 'Champ à remplir')
+                +input-animation('input-2', 'Champ à remplir')
+                +input-animation('input-3', 'Champ à remplir')
+
+              button.form-btn(type='submit') S’enregistrer
+              span.note-text *Champ obligatoire
+
+          .enregistrement__item
+            h3.block-title
+              span.block-title__text Rechercher une réservation
+            .enregistrement__item__description
+              span Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            .buttons
+              a.button-with-icon(href='#') Rechercher une réservation
+
+      footer.enregistrement-footer
+        .enregistrement-footer__info
+          .enregistrement-footer__icon
+            img(src='assets/images/icons/plane-tag.png' alt='#')
+          .enregistrement-footer__description
+            span Vous pouvez annuler votre enregistrement en ligne, jusqu'à l'heure limite d'enregistrement de votre vol.
+
+        a.button-with-icon.button-with-icon--dark.enregistrement-footer__button(href='#') Annuler sa réservation

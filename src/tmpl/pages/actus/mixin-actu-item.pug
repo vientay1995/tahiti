@@ -1,0 +1,12 @@
+mixin actu-item(title, imagePath, category, date, description)
+  .actu
+    a.actu__image(href='#')
+      img(src=imagePath alt='#')
+    .actu__info
+      a.actu__info__category(href='#')= category
+      span.actu__info__date= date
+    a.actu__title(href='#')= title
+    .actu__description
+      span= description
+    .actu__buttons
+      a.button-with-icon.button-with-icon--icon-first(href='#') Lire l’article

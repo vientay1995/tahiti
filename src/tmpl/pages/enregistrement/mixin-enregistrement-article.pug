@@ -1,0 +1,9 @@
+mixin enregistrement-article(title, imagePath, desciption)
+  .article-item
+    .article-item__image
+      img(src=imagePath alt='#')
+    a.block-title.article-item__title(href='#')= title
+    .article-item__description= description
+    .buttons
+      a.button-with-icon.button-with-icon--dark(href='#') En savoir +
+    

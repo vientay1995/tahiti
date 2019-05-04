@@ -1,0 +1,25 @@
+extends tmpl/layout/layout.pug
+include tmpl/mixins/mixin-page-title
+
+block content
+  +page-title('Bora Bora', 'icon-tatoo-2')
+
+  section.destination-block.destination-intro
+    .container
+      .block-intro
+        span Bora Bora s'appelait Vavau autrefois. Véritable joyau posé sur l’écrin bleu du Pacifique, elle émerge de l'océan à 45 minutes d'avion au nord-ouest de Tahiti. Son lagon miroitant, aux dégradés saphir, émeraude et turquoise, est considéré comme l'un des plus beaux du monde...
+        .block-intro__buttons
+          a.button-with-icon(href='#') Lire la suite
+  
+  include tmpl/pages/destination/usefull-information
+  
+  section.destination-block.destination-content
+    .container
+      .destination-content-wrapper
+        include tmpl/pages/destination/column-left
+        include tmpl/pages/destination/column-right
+        include tmpl/pages/destination/bora-airport
+        include tmpl/pages/destination/footer-listing
+        include tmpl/pages/destination/buttons
+
+        

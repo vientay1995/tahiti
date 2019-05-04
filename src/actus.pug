@@ -1,0 +1,31 @@
+extends tmpl/layout/layout.pug
+include tmpl/pages/actus/mixin-actu-item
+
+block content
+  - var actuDescription = 'Sed ut perspiciatis unde omnis iste natus error sit perspiciatis unde omnis iste natus perspiciatis unde omnis iste natus error sit perspiciatis unde omnis iste natus...'
+
+  section.page-title-section
+    .container
+      h2.page-title
+        img.page-title__icon(src='assets/images/icons/triangle-double-circle-icon.png' alt='#')
+        span.page-title__text Lorem ipsum
+  
+  section.magazines-header.actus-header
+    .container
+      .magazines-header-inner
+        .block-intro
+          span Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magvoluptatem.
+  
+  include tmpl/components/horizontal-category
+
+  section.actus-section
+    .container
+      .actus-section-inner
+        article.actus
+          .actus-inner
+            +actu-item('Nemo ratione enim ipsum', 'assets/images/actus/actu-1.jpg', 'catégorie 1', '11/12/2018', actuDescription)
+            +actu-item('Nemo ratione enim ipsum', 'assets/images/actus/actu-2.jpg', 'catégorie 1', '11/12/2018', actuDescription)
+            +actu-item('Intitulé du poste', 'assets/images/actus/actu-3.jpg', 'emploi', '11/12/2018', actuDescription)
+            +actu-item('Nemo ratione enim ipsum', 'assets/images/actus/actu-1.jpg', 'catégorie 1', '11/12/2018', actuDescription)
+            +actu-item('Nemo ratione enim ipsum', 'assets/images/actus/actu-2.jpg', 'catégorie 1', '11/12/2018', actuDescription)
+            +actu-item('Nemo ratione enim ipsum', 'assets/images/actus/actu-4.jpg', 'catégorie 1', '11/12/2018', actuDescription)

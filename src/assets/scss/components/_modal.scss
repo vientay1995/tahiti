@@ -1,0 +1,125 @@
+.modal-open {
+  overflow: hidden;
+}
+
+.tahiti-modal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $black-transparent;
+  z-index: -1;
+  padding-top: 30px;
+  font-family: $ubuntu-regular;
+  font-size: 14px;
+  transition: 0.7s;
+  opacity: 0;
+  overflow: auto;
+
+  &.shown {
+    opacity: 1;
+    z-index: 999999999;
+    .tahiti-modal-inner {
+      transform: translateY(0);
+    }
+  }
+
+  &-inner {
+    position: relative;
+    max-width: 800px;
+    background: $white;
+    border: 1px solid $green;
+    transition: 0.5s;
+    transform: translateY(-150%);
+
+    @include bp(mob) {
+      max-width: 90%;
+    }
+  }
+
+  &__header {
+    position: relative;
+    border-bottom: 1px solid $border-color;
+    padding: 20px 15px 8px;
+
+    &__title {
+      color: $category-color;
+      font-family: $ubuntu-medium;
+      font-size: 16px;
+    }
+
+    &__close-btn {
+      position: absolute;
+      top: 19px;
+      right: 12px;
+      color: $category-color;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 3px;
+        width: 13px;
+        height: 3px;
+        background: $category-color;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__body {
+    padding: 15px ;
+    line-height: 1.7;
+
+    a {
+      color: $red;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 30px;
+    border-top: 1px solid $border-color;
+    padding-top: 20px;
+
+    &__buttons {
+      margin: 0 -15px;
+    }
+
+    &__button {
+      display: flex;
+
+      @include bp(mob) {
+        justify-content: center;
+        padding: 5px 0;
+      }
+
+      &--right {
+        justify-content: flex-end;
+
+        @include bp(mob) {
+          justify-content: center;
+        }
+      }
+    }
+
+    .form-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import './home/booking-bar.scss';
+@import './home/tahiti-offers.scss';
+@import './home/tahiti-offers--picture.scss';
+@import './home/news.scss';
+@import './home/our-company.scss';
+
+.alert-message {
+  padding: 8px 0;
+  background: $alert-color;
+  font-size: 13px;
+  text-align: center;
+}
+
+.tahiti-slider {
+  width: 100%;
+  background: $white;
+
+  .slick-next {
+    right: 5%;
+    width: 55px;
+    height: 55px;
+
+    &::before {
+      content: '\e925';
+      font-family: $icomoon;
+      font-size: 30px;
+      opacity: 1;
+
+      @include bp(desktop) {
+        font-size: 55px;
+      }
+    }
+  }
+
+  .slick-prev {
+    left: 5%;
+    z-index: 99;
+    width: 55px;
+    height: 55px;
+
+    &::before {
+      content: '\e926';
+      font-family: $icomoon;
+      font-size: 30px;
+      opacity: 1;
+
+      @include bp(desktop) {
+        font-size: 55px;
+      }
+    }
+  }
+
+  .tahiti-home-slider__item__image {
+    display: inline;
+  }
+}
+
+.tahiti-home-slider {
+  &__item {
+    &__image {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,182 @@
+/* ==============================util functions=================================== */
+@mixin bp($media) {
+  @if $media==desktop {
+    @include media-breakpoint-up(lg)  {
+      @content;
+    }
+  }
+
+  @else if $media==tab {
+    @include media-breakpoint-between(sm,md) {
+      @content;
+    }
+  }
+
+  @else if $media==mob {
+    @include media-breakpoint-down(xs)  {
+      @content;
+    }
+  }
+}
+
+@mixin background-gradient-top-down($bgcolor, $startcolor, $endcolor, $img: '') {
+  background-color: $bgcolor $img;
+  @if $img == '' {
+    background-image: linear-gradient(to bottom, $startcolor, $endcolor);
+  } @else {
+    background-image: url($img),
+    linear-gradient(to bottom, $startcolor, $endcolor);
+  }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startcolor}',endColorstr='#{$endcolor}',GradientType=0);
+}
+
+@mixin border-radius-separate($top-left-radius: 2px, $top-right-radius: 2px, $bottom-left-radius: 2px, $bottom-right-radius: 2px) {
+  border-top-left-radius:     $top-left-radius;
+  border-top-right-radius:    $top-right-radius;
+  border-bottom-left-radius:  $bottom-right-radius;
+  border-bottom-right-radius: $bottom-left-radius;
+}
+
+@mixin placeholder-color($color, $errorcolor) {
+  &::-webkit-input-placeholder {color: $color;}
+
+  @if $errorcolor != '' {
+    &.error {
+      &:-webkit-input-placeholder {color: $errorcolor;}
+    }
+  }
+
+  &:-moz-placeholder {
+    opacity:  1;
+    color: $color;
+  }
+
+  @if $errorcolor != '' {
+    &.error {
+      &:-moz-placeholder {
+        opacity:  1;
+        color: $errorcolor;
+      }
+    }
+  }
+
+  &::-moz-placeholder {
+    opacity:  1;
+    color: $color;
+  }
+
+  @if $errorcolor != '' {
+    &.error {
+      &:-moz-placeholder {
+        opacity:  1;
+        color: $errorcolor;
+      }
+    }
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  @if $errorcolor != '' {
+    &.error {
+      &:-ms-input-placeholder {
+        color: $errorcolor;
+      }
+    }
+  }
+}
+
+/* BOX SHADOW */
+$color-default-box-shadow: rgba(0, 0, 0, .4);
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: $color-default-box-shadow, $inset: '') {
+  @if ($inset != '') {
+    box-shadow:         $inset $x $y $blur $color;
+  } @else {
+    box-shadow:         $x $y $blur $color;
+  }
+}
+
+/* DOUBLE BORDERS */
+$color-default-double-border-one: #3c3c3c;
+$color-default-double-border-two: #999;
+@mixin double-borders($color-one: $color-default-double-border-one, $color-two: $color-default-double-border-two, $radius: 0) {
+  border: 1px solid $color-one;
+  box-shadow:         0 0 0 1px $color-two;
+
+  @include border-radius($radius);
+}
+
+@mixin anchor($color, $hovercolor, $decoration: '', $hoverdecoration: '') {
+  a {
+    color: $color;
+    @if $decoration != '' {
+      text-decoration: $decoration;
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      color: $hovercolor;
+      @if $hoverdecoration != '' {
+        text-decoration: $hoverdecoration;
+      }
+    }
+  }
+}
+
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    src: url('../fonts/#{$file-path}.eot');
+    src: url('../fonts/#{$file-path}.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/#{$file-path}.woff') format('woff'),
+    url('../fonts/#{$file-path}.ttf') format('truetype'),
+    url('../fonts/#{$file-path}.svg##{$font-family}') format('svg');
+  }
+}
+
+/* OPACITY */
+@mixin opacity($opacity: .5) {
+  opacity:        $opacity;
+  -ms-filter:     'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + ($opacity * 100) + ')';
+  -moz-opacity:   $opacity;
+  -khtml-opacity: $opacity;
+}
+
+/* ROTATE*/
+@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+  transform: rotate($deg + deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(
+  M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+  zoom: 1;
+}
+
+/* TEXT SHADOW */
+$color-default-text-shadow: rgba(0, 0, 0, .4);
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: $color-default-text-shadow) {
+  text-shadow: $x $y $blur $color;
+}
+
+/* TRIPLE BORDERS */
+$color-default-double-border-one: #3c3c3c;
+$color-default-double-border-two: #999;
+$color-default-double-border-three: #000;
+@mixin triple-borders($color-one: $color-default-double-border-one, $color-two: $color-default-double-border-two, $color-three: $color-default-double-border-three, $radius: 0) {
+  border: 1px solid $color-one;
+
+  @include border-radius($radius);
+
+  box-shadow:         0 0 0 1px $color-two, 0 0 0 2px $color-three;
+}
+
+%clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: ' ';
+  }
+}

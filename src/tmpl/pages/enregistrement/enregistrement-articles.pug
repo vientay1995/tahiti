@@ -1,0 +1,18 @@
+include ./mixin-enregistrement-article
+- var description = 'Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque'
+
+section.enregistrement-section.enregistrement-articles
+  .container
+    .enregistrement-section-inner
+      .block-title
+        span.block-title__text À propos de l’enregistrement
+
+      .block-intro
+        span Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      
+      .articles
+        .articles-inner
+          +enregistrement-article('S’enregistrer en ligne', 'assets/images/icons/laptop.png', description)
+          +enregistrement-article('Bornes libre service', 'assets/images/icons/photo-machine.png', description)
+          +enregistrement-article('Comptoirs d’enregistrement', 'assets/images/icons/reception-big.png', description)
+

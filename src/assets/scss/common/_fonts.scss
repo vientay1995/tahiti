@@ -1,0 +1,320 @@
+@include font-face('Icomoon', 'icomoon', normal, normal);
+$icomoon: 'Icomoon', arial, sans-serif;
+
+@include font-face('Ubuntu-Bold', 'Ubuntu-Bold', normal, normal);
+$ubuntu-bold: 'Ubuntu-Bold', arial, sans-serif;
+
+@include font-face('Ubuntu-BoldItalic', 'Ubuntu-BoldItalic', normal, normal);
+$ubuntu-bold-italic: 'Ubuntu-BoldItalic', arial, sans-serif;
+
+@include font-face('Ubuntu-Italic', 'Ubuntu-Italic', normal, normal);
+$ubuntu-italic: 'Ubuntu-Italic', arial, sans-serif;
+
+@include font-face('Ubuntu-Light', 'Ubuntu-Light', normal, normal);
+$ubuntu-light: 'Ubuntu-Light', arial, sans-serif;
+
+@include font-face('Ubuntu-LightItalic', 'Ubuntu-LightItalic', normal, normal);
+$ubuntu-light-italic: 'Ubuntu-LightItalic', arial, sans-serif;
+
+@include font-face('Ubuntu-Medium', 'Ubuntu-Medium', normal, normal);
+$ubuntu-medium: 'Ubuntu-Medium', arial, sans-serif;
+
+@include font-face('Ubuntu-MediumItalic', 'Ubuntu-MediumItalic', normal, normal);
+$ubuntu-medium-italic: 'Ubuntu-MediumItalic', arial, sans-serif;
+
+@include font-face('Ubuntu-Regular', 'Ubuntu-Regular', normal, normal);
+$ubuntu-regular: 'Ubuntu-Regular', arial, sans-serif;
+
+$awesome: 'Font Awesome 5 Free', arial, sans-serif;
+
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: $icomoon;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 30px;
+  position: relative;
+  top: 0.1rem;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-animal::before {
+  content: '\e900';
+}
+
+.icon-remove::before {
+  content: '\e903';
+}
+
+.icon-clock::before {
+  content: '\e904';
+}
+
+.icon-warning::before {
+  content: '\e905';
+}
+
+.icon-bagage::before {
+  content: '\e906';
+}
+
+.icon-suitcase::before {
+  content: '\e907';
+}
+
+.icon-baby::before {
+  content: '\e908';
+}
+
+.icon-suitcase-question::before {
+  content: '\e909';
+}
+
+.icon-seat::before {
+  content: '\e90a';
+}
+
+.icon-cocktail::before {
+  content: '\e90b';
+}
+
+.icon-atm::before {
+  content: '\e90c';
+}
+
+.icon-calendar::before {
+  content: '\e90d';
+}
+
+.icon-circle-stroke::before {
+  content: '\e90e';
+}
+
+.icon-circle::before {
+  content: '\e90f';
+}
+
+.icon-comment::before {
+  content: '\e910';
+}
+
+.icon-reception::before {
+  content: '\e911';
+}
+
+.icon-connection::before {
+  content: '\e912';
+}
+
+.icon-conseils::before {
+  content: '\e913';
+}
+
+.icon-home-suitcase::before {
+  content: '\e914';
+}
+
+.icon-contact::before {
+  content: '\e915';
+}
+
+.icon-contact-information::before {
+  content: '\e916';
+}
+
+.icon-delete::before {
+  content: '\e917';
+}
+
+.icon-kaveka::before {
+  content: '\e919';
+}
+
+.icon-open-box::before {
+  content: '\e91a';
+}
+
+.icon-box::before {
+  content: '\e91b';
+}
+
+.icon-plane::before {
+  content: '\e91c';
+}
+
+.icon-download-pdf::before {
+  content: '\e91d';
+}
+
+.icon-download::before {
+  content: '\e91e';
+}
+
+.icon-baby-girl::before {
+  content: '\e920';
+}
+
+.icon-family::before {
+  content: '\e922';
+}
+
+.icon-female::before {
+  content: '\e923';
+}
+
+.icon-arrow-right::before {
+  content: '\e924';
+}
+
+.icon-angle-right::before {
+  content: '\e925';
+}
+
+.icon-angle-left::before {
+  content: '\e926';
+}
+
+.icon-note-book::before {
+  content: '\e927';
+}
+
+.icon-home::before {
+  content: '\e928';
+}
+
+.icon-book::before {
+  content: '\e92a';
+}
+
+.icon-mail::before {
+  content: '\e92b';
+}
+
+.icon-bag::before {
+  content: '\e92c';
+}
+
+.icon-battery::before {
+  content: '\e92d';
+}
+
+.icon-island::before {
+  content: '\e92e';
+}
+
+.icon-passenger::before {
+  content: '\e92f';
+}
+
+.icon-animal-2::before {
+  content: '\e930';
+}
+
+.icon-reduced-mobility::before {
+  content: '\e931';
+}
+
+.icon-population::before {
+  content: '\e932';
+}
+
+.icon-search::before {
+  content: '\e933';
+}
+
+.icon-plane-tag::before {
+  content: '\e934';
+}
+
+.icon-laptop::before {
+  content: '\e937';
+}
+
+.icon-check::before {
+  content: '\e938';
+}
+
+.icon-chair::before {
+  content: '\e939';
+}
+
+.icon-map::before {
+  content: '\e93a';
+}
+
+.icon-circle-check::before {
+  content: '\e93b';
+}
+
+.icon-close::before {
+  content: '\e93c';
+}
+
+.icon-calculator::before {
+  content: '\e93d';
+}
+
+.icon-estimate::before {
+  content: '\e93e';
+}
+
+.icon-tarifs::before {
+  content: '\e93f';
+}
+
+.icon-tatoo-1::before {
+  content: '\e940';
+}
+
+.icon-tatoo-2::before {
+  content: '\e941';
+}
+
+.icon-tatoo-3::before {
+  content: '\e942';
+}
+
+.icon-tatoo-4::before {
+  content: '\e943';
+}
+
+.icon-tatoo-5::before {
+  content: '\e944';
+}
+
+.icon-tatoo-6::before {
+  content: '\e945';
+}
+
+.icon-tatoo-7::before {
+  content: '\e946';
+}
+
+.icon-triangle-right::before {
+  content: '\e947';
+}
+
+.icon-triangle-left::before {
+  content: '\e948';
+}
+
+.icon-video-player::before {
+  content: '\e949';
+}
+
+.icon-village::before {
+  content: '\e94a';
+}
+
+.icon-zoom::before {
+  content: '\e94c';
+}

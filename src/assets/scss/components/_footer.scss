@@ -1,0 +1,171 @@
+@import 'footer/newsletter-form';
+
+.main-bottom {
+  margin: 0;
+  padding: 35px 0 50px;
+
+  @include bp(mob) {
+    padding-top: 20px;
+  }
+
+  &-inner {
+    @include bp(desktop) {
+      padding: 0 15px;
+    }
+  }
+}
+
+.main-footer {
+  background-color: $bg-color;
+
+  &-inner {
+    padding: 17px 0;
+  }
+
+  &__columns {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 15px;
+
+    @include bp(tab) {
+      padding: 0;
+      margin: 0 -15px;
+    }
+
+    @include bp(mob) {
+      padding: 0;
+      margin: 0 -15px;
+    }
+  }
+
+  &__column {
+    width: calc(100% / 6);
+    padding: 0 15px;
+
+    @include bp(tab) {
+      width: calc(100% / 3);
+    }
+
+    @include bp(mob) {
+      width: calc(100% / 2);
+    }
+
+    &--newsletter {
+      padding: 0;
+
+      @include bp(tab) {
+        padding-right: 15px;
+      }
+    }
+  }
+
+  &__copyright {
+    padding: 50px 15px 0;
+
+    &-inner {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 27px;
+      background: url(../images/old/frise.png) no-repeat;
+      background-size: 100% auto;
+    }
+
+    &__link {
+      color: $block-title-color;
+      font-family: $ubuntu-light;
+      font-size: 14px;
+    }
+  }
+}
+
+.footer-list {
+  margin: 0;
+  padding: 0;
+
+  &-title {
+    padding: 15px 0 5px;
+    color: $block-title-color;
+    font-family: $ubuntu-medium;
+    font-size: 16px;
+
+    &__link {
+      color: $block-title-color;
+
+      &:hover {
+        color: $block-title-color;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__item {
+    &__link {
+      color: $block-title-color;
+      font-family: $ubuntu-light;
+      font-size: 14px;
+
+      &:hover {
+        color: $block-title-color;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.social-list {
+  margin: 0 -4px;
+}
+
+.social-item {
+  padding: 0 4px;
+
+  &__icon {
+    color: $block-title-color;
+    font-size: 27px;
+  }
+}
+
+.newsletter {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  top: -17px;
+  padding: 15px 30px;
+  background-color: $newsletter-bg;
+  color: $white;
+  overflow: hidden;
+
+  &::before {
+    content: '\e943';
+    position: absolute;
+    top: -112px;
+    right: -112px;
+    color: $black;
+    font-family: $icomoon;
+    font-size: 240px;
+    line-height: 1;
+    opacity: 0.3;
+  }
+
+  &__title {
+    position: relative;
+    color: $white;
+  }
+
+  &__description {
+    position: relative;
+    padding: 8px 0 20px;
+    font-family: $ubuntu-light;
+    font-size: 14px;
+  }
+
+  &__buttons {
+    position: relative;
+    display: flex;
+    padding-bottom: 5px;
+  }
+
+  &__button {
+    padding: 10px 20px;
+  }
+}

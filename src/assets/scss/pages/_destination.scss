@@ -1,0 +1,300 @@
+.destination-block {
+  background: $white;
+  padding: 60px 0 40px;
+
+  @include bp(mob) {
+    padding: 30px 0;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  &__title {
+    position: relative;
+    margin-top: 40px;
+    color: $black;
+    font-family: $ubuntu-medium;
+    font-size: 24px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 70px;
+      height: 1px;
+      background: $green;
+    }
+  }
+}
+
+.destination-slider {
+  display: block;
+  width: 100%;
+}
+
+.destination-intro {
+  .block-intro {
+    &__buttons {
+      padding-top: 30px;
+    }
+  }
+}
+
+.usefull-information {
+  padding-bottom: 0;
+
+  .destination-block__title {
+    @include bp(tab) {
+      width: 100%;
+      padding-bottom: 20px;
+    }
+  }
+
+  &-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 27%;
+
+    @include bp(tab) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      padding-bottom: 20px;
+    }
+
+    @include bp(mob) {
+      width: 100%;
+      padding-bottom: 20px;
+    }
+
+    .__item {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+
+      @include bp(tab) {
+        align-items: flex-start;
+        width: 50%;
+      }
+
+      &__text {
+        color: $description-color;
+        font-size: 18px;
+
+        @include bp(mob) {
+          font-size: 14px;
+        }
+      }
+
+      &__icon {
+        margin-right: 10px;
+        color: $green;
+        font-size: 40px;
+
+        @include bp(mob) {
+          font-size: 25px;
+        }
+      }
+    }
+
+    .destination-block__title {
+      margin-top: 0;
+    }
+  }
+
+  &__slider {
+    width: 50.5%;
+    padding: 0 5%;
+
+    @include bp(tab) {
+      width: 67%;
+    }
+
+    @include bp(mob) {
+      width: 65%;
+      padding: 0 15px 0 0;
+    }
+
+    .__item {
+      &__image {
+        width: 100%;
+      }
+    }
+  }
+
+  &__map {
+    width: 22.5%;
+    text-align: right;
+
+    @include bp(tab) {
+      width: 32%;
+    }
+
+    @include bp(mob) {
+      width: 34.5%;
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+}
+
+.destination-column-left {
+  @include bp(mob) {
+    width: 100%;
+  }
+}
+
+.destination-column-right {
+  @include bp(mob) {
+    width: 100%;
+  }
+}
+
+.destination-content {
+  padding-top: 20px;
+
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  &__block {
+    padding: 40px 0;
+
+    @include bp(tab) {
+      padding: 20px 0;
+    }
+
+    @include bp(mob) {
+      padding: 20px 0 0;
+    }
+  }
+}
+
+.destination-video {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__slider {
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+  }
+}
+
+.destination-magazine {
+  &__info {
+    display: inline-block;
+    position: relative;
+    margin: 30px 0;
+    overflow: hidden;
+
+    &:hover {
+      .destination-magazine__info__overlay {
+        transform: translateY(0);
+      }
+    }
+
+    &__overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateY(100%);
+      transition: 0.3s;
+      background: $white-transparent;
+      padding: 20px 10px;
+
+      .__icon {
+        margin: 0 8px;
+        border-radius: 50%;
+        color: $black;
+        font-size: 40px;
+
+        &:hover {
+          background: $green;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.destination-text-block {
+  padding: 0 15px;
+
+  @include bp(mob) {
+    padding-top: 40px;
+  }
+
+  &--with-padding {
+    padding-right: 10%;
+
+    @include bp(mob) {
+      padding: 40px 0 0;
+    }
+  }
+
+  .block-intro {
+    padding-top: 30px;
+  }
+}
+
+.destination-footer-listings {
+  display: flex;
+  width: 100%;
+  padding: 0 15px;
+
+  @include bp(mob) {
+    flex-direction: column;
+  }
+
+  .destination-block__title {
+    color: $green;
+    font-family: $ubuntu-regular;
+    font-size: 18px;
+
+    @include bp(mob) {
+      margin-top: 15px;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .listing-block {
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.destination-footer-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 60px 15px 0;
+
+  .form-btn {
+    width: auto;
+    min-width: 190px;
+  }
+}

@@ -1,0 +1,13 @@
+mixin select(id, label, options, className)
+  .select-item(id= id, class= className)
+    label.select-item__label= label
+    select(id= 'select-' + id, name= 'select-' + id)
+      each item in options
+        option(value= item)= item
+
+mixin select-placeholder(id, label, options)
+  .select-item.select-item--placeholder(id= id)
+    label.fake-placeholder= label
+    select(id= 'select-' + id, name= 'select-' + id)
+      each item in options
+        option(value= item)= item

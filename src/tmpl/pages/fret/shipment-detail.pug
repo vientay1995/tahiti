@@ -1,0 +1,50 @@
+include ../../mixins/mixin-input
+include ../../mixins/mixin-select
+
+section.fret-section.fret-contact-info.js-form-step.step-2
+    .container
+      .section-inner
+        .white-block.fret-block
+          .fret-block-inner
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-plane
+              span.block-title__text Détails de l’envoi
+            
+            //- Expediteur
+            .form-group.form-group--fret
+              h4.form-group__title Trajet
+              .row.form-group-inner
+                - var islands = ['Tahiti (PPT)', 'Ahe (AHE)', 'Anaa (AAA)', 'Apataki(APK)', 'Aratika (RKA)', 'Arutua (AXR)', 'Hiva Oa (AUQ)']
+                .col-lg-6.col-md-6.fret-form-item
+                  +select-placeholder('fret-departure-island', 'île de départ', islands)
+                .col-lg-6.col-md-6.fret-form-item
+                  +select-placeholder('fret-arrival-island', 'île d’arrivée', islands)
+
+            //- Destinataire
+            .form-group.form-group--fret
+              h4.form-group__title Vols souhaités
+              include ./flight-tables
+              .row.form-group-inner
+                .col-lg-4.col-md-4.fret-form-item.fret-depart-datepicker
+                  +input-animation-datepicker('fret-depart', 'Départ (JJ/MM/AAAA) : ')
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-ticket-number', 'N° de vol')
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-depart-time', 'Heure de départ')
+                .col-full.fret-form-item
+                  span Merci de nous indiquer un 2e vol dans le cas où votre 1er choix ne serait plus disponible.
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation-datepicker('fret-depart-2', 'Départ (JJ/MM/AAAA) : ')
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-ticket-number-2', 'N° de vol')
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-depart-time-2', 'Heure de départ')
+                
+              
+            //- Buttons
+            .fret-form-buttons
+              .col-lg-3.col-md-3.fret-form-item
+                button.form-btn.form-btn--green(data-to-step='step-1') Retour
+              .col-lg-6.col-md-6
+              .col-lg-3.col-md-3.fret-form-item
+                button.form-btn(data-to-step='step-3') Suivant

@@ -1,0 +1,10 @@
+mixin plain-intro(title, imagePath, description)
+  section.plain-intro
+    .container
+      .plain-intro-inner
+        h2.page-title
+          img.page-title__icon(src=imagePath alt='#')
+          span.page-title__text= title
+        .block-intro
+          span= description
+    

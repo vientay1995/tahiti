@@ -1,0 +1,30 @@
+include ../../mixins/mixin-radio
+include ../../mixins/mixin-input
+include ../../mixins/mixin-checkbox
+
+.tahiti-modal.newsletter-modal
+  .tahiti-modal-inner
+    header.tahiti-modal__header
+      h3.tahiti-modal__header__title INSCRIPTION À LA NEWSLETTER
+      span.tahiti-modal__header__close-btn.tahiti-close-modal
+    main.tahiti-modal__body
+      form.newsletter-form(id='newsletter-form')
+        .newsletter-gender
+          +radio('newsletter-gender-male', 'newsletter-gender', '0', 'Mr')
+          +radio('newsletter-gender-female', 'newsletter-gender', '1', 'Mme')
+        .newsletter-inputs
+          +input-standard('newsletter-name', 'Nom*', true, 'Obligatoire')
+          +input-standard('newsletter-first-name', 'Prénom*', true, 'Obligatoire')
+          +input-standard('newsletter-email', 'Email*', true, 'Email invalide')
+          .input-standard
+            input.input-standard__txt(type='text' name='newsletter-birthday' id='newsletter-birthday' data-inputmask="'mask': '99/99/9999'" placeholder='Date de naissance (JJ/MM/AAAA)' data-error='Date de naissance invalide')
+          .booking-select.newsletter-islands
+            - var islands = ['Tahiti', 'Bora Bora', 'Moorea', 'Huahine', 'Raiatea']
+            select.booking-select__select.newsletter-island__select
+              each island, index in islands
+                option(value= index)= island
+          +input-standard('newsletter-phone', 'Téléphone')
+          +checkbox('newsletter-agreement', 'Je souhaite recevoir les newsletter du groupe Air Tahiti. Fréquence moyenne : 3/mois.')
+          .newsletter-buttons
+            button.form-btn(type='submit' id='newsletter-submit') Valider
+            .note-text *Champs obligatoires

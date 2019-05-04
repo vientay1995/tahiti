@@ -1,0 +1,211 @@
+.news-section {
+  padding-bottom: 60px;
+}
+
+.tahiti-news {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+
+  &-inner {
+    display: flex;
+    padding-bottom: 50px;
+    width: 100%;
+
+    @include bp(mob) {
+      flex-direction: column;
+    }
+  }
+
+  &-list {
+    display: flex;
+    padding: 0;
+
+    @include bp(mob) {
+      display: block;
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  .favorite-destination-block {
+    @include bp(mob) {
+      order: 3;
+    }
+  }
+
+  .magazine-onboard-block {
+    @include bp(mob) {
+      order: 2;
+      width: 100%;
+    }
+  }
+
+  &-item {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+
+    @include bp(mob) {
+      display: block;
+    }
+
+    &__img {
+      img {
+        width: 100%;
+      }
+    }
+
+    &__title {
+      position: absolute;
+      bottom: 40px;
+      left: 25px;
+      color: $white;
+      font-family: $ubuntu-medium;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    &__overlay {
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s;
+      background: $title-color;
+      padding: 40px 25px;
+      color: $white;
+      font-family: $ubuntu-light;
+      font-size: 16px;
+      opacity: 0;
+
+      .__title {
+        font-size: 26px;
+      }
+
+      .__description {
+        flex-grow: 2;
+        padding: 15px 0;
+      }
+
+      .__button {
+        display: flex;
+        align-items: center;
+
+        i {
+          font-size: 20px;
+        }
+
+        span {
+          padding-left: 5px;
+        }
+      }
+    }
+
+    &:hover {
+      .tahiti-news-item__overlay {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.newsletter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $white;
+  height: 100%;
+  padding: 40px 25px;
+
+  &__img {
+    flex-grow: 2;
+  }
+
+  &__title {
+    color: $icon-color;
+    font-family: $ubuntu-bold;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.favorite-destination {
+  &-item {
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    padding: 40px;
+    border-bottom: 1px solid $green;
+
+    img {
+      width: 100%;
+    }
+
+    &__title {
+      padding: 20px 0;
+      color: $black;
+      font-family: $ubuntu-medium;
+      font-size: 24px;
+    }
+
+    &__description {
+      padding-bottom: 20px;
+      color: $intro-text-color;
+      font-family: $ubuntu-regular;
+      font-size: 18px;
+      text-align: justify;
+    }
+  }
+}
+
+.magazine-onboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    background: $white;
+    padding: 40px;
+    border-bottom: 1px solid $green;
+
+    &__img {
+      width: 100%;
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0;
+
+      a {
+        margin: 0 10px;
+        color: $black;
+        font-size: 40px;
+        border-radius: 50%;
+        transition: 0.3s;
+
+        &:hover {
+          background: $green;
+          color: $white;
+        }
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

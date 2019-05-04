@@ -1,0 +1,20 @@
+extends tmpl/layout/layout.pug
+
+block content
+  include tmpl/pages/home/cookie-modal
+  section.alert-message
+    .container-fluid
+      span Important : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+  
+  section.tahiti-slider
+    .tahiti-home-slider
+      .tahiti-home-slider__item
+        img.tahiti-home-slider__item__image(src='assets/images/old/image_01.jpg' alt='#')
+      .tahiti-home-slider__item
+        img.tahiti-home-slider__item__image(src='assets/images/old/image_01.jpg' alt='#')
+  
+  include tmpl/pages/home/booking-bar
+  include tmpl/pages/home/tahiti-offers
+  include tmpl/pages/home/tahiti-offers--picture
+  include tmpl/pages/home/news
+  include tmpl/pages/home/our-company

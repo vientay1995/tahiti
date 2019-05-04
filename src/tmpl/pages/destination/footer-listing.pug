@@ -1,0 +1,7 @@
+include ../../mixins/mixin-listing-block
+
+.destination-footer-listings
+  - var atAirport = ['Snack', 'Boutiques de souvenirs', 'Point presse', 'Toilettes']
+  - var inVaitape = ['Agence Air Tahiti', 'Trucks (transports en commun locaux)', 'Taxis', 'Agences de location de véhicules, à 100m du débarcadère']
+  +listing-block('Services disponibles à l’aéroport', atAirport)
+  +listing-block('Services disponibles à Vaitape', inVaitape)

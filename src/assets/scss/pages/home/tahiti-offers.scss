@@ -1,0 +1,163 @@
+.tahiti-offers-section {
+  background: $bg-color;
+  padding: 40px 0 10px;
+
+  .page-title {
+    padding: 10px 0 65px;
+  }
+}
+
+.tahiti-offer-list {
+  display: flex;
+}
+
+.tahiti-offer {
+  &-inner {
+    display: flex;
+    position: relative;
+    background: $white;
+    padding: 25px;
+    border-bottom: 1px solid;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+
+    &__title {
+      font-family: $ubuntu-medium;
+      font-size: 24px;
+    }
+
+    &__type {
+      font-family: $ubuntu-light;
+      font-size: 18px;
+      padding-bottom: 20px;
+      min-height: 45px;
+    }
+
+    &__subtitle {
+      color: $category-color;
+      font-family: $ubuntu-bold;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    &__description {
+      color: $category-color;
+      font-family: $ubuntu-regular;
+      font-size: 14px;
+    }
+
+    &__value {
+      font-family: $ubuntu-bold;
+      font-size: 32px;
+
+      .__text {
+        padding-right: 10px;
+      }
+
+      .__ttc {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+
+    &::before {
+      content: '\e940';
+      position: absolute;
+      top: -172px;
+      right: -105px;
+      color: $block-title-color;
+      font-family: $icomoon;
+      font-size: 318px;
+      opacity: 0.3;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 3;
+  }
+
+  &__button {
+    display: none;
+    position: absolute;
+    align-items: center;
+    bottom: 25px;
+    left: 25px;
+    color: $white;
+    font-family: $ubuntu-light;
+    font-size: 18px;
+    z-index: 3;
+
+    i {
+      font-size: 20px;
+    }
+
+    span {
+      padding-left: 5px;
+    }
+  }
+
+  &:hover {
+    .tahiti-offer__overlay {
+      display: block;
+    }
+
+    .tahiti-offer__button {
+      display: flex;
+    }
+  }
+
+  &--red {
+    .tahiti-offer-inner {
+      border-color: $offer-1;
+      color: $offer-1;
+    }
+
+    .tahiti-offer__overlay {
+      background-color: $offer-1;
+    }
+  }
+
+  &--green {
+    .tahiti-offer-inner {
+      border-color: $offer-2;
+      color: $offer-2;
+    }
+
+    .tahiti-offer__overlay {
+      background-color: $offer-2;
+    }
+  }
+
+  &--blue {
+    .tahiti-offer-inner {
+      border-color: $offer-3;
+      color: $offer-3;
+    }
+
+    .tahiti-offer__overlay {
+      background-color: $offer-3;
+    }
+  }
+}
+
+.tahiti-offer-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 25px 15px;
+}

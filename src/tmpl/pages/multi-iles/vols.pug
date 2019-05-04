@@ -1,0 +1,64 @@
+include ../../mixins/mixin-input
+include ../../mixins/mixin-select
+include ../../mixins/mixin-radio
+include ../../mixins/mixin-checkbox
+
+section.fret-section.fret-contact-info.js-form-step.step-1
+    - var islands = ['Tahiti (PPT)', 'Ahe (AHE)', 'Anaa (AAA)', 'Apataki(APK)', 'Aratika (RKA)', 'Arutua (AXR)', 'Hiva Oa (AUQ)']
+    - var options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6']
+    .container
+      .section-inner
+        .white-block.fret-block
+          .fret-block-inner
+            .block-intro
+              span Vous vous apprêtez à effectuer une demande de «fret réservé». 
+              br
+              span Votre demande sera traitée dans un délai de 3 jours ouvrés maximum.
+            
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-plane
+              span.block-title__text Vols
+
+            .col-full.fret-form-item.vol-intro
+              span Sélectionnez votre itinéraire. Pour vous aider, vous pouvez consulter nos 
+              a(href='#') itinéraires conseillés
+            
+            //- Vols
+            .form-group.form-group--fret.multi-iles-group.vol-group
+              h4.form-group__title Vol 1
+              .row.form-group-inner.multi-iles-group-inner
+                .col-lg-6.col-md-6.fret-form-item.fret-form-item--less-padding
+                  +select-placeholder('multi-iles-departure-island', 'île de départ', islands)
+                .col-lg-6.col-md-6.fret-form-item.fret-form-item--less-padding
+                  +select-placeholder('multi-iles-arrival-island', 'île d’arrivée', islands)
+                .col-lg-6.col-md-6.fret-form-item.fret-form-item--less-padding
+                  +input-animation-datepicker('multi-iles-depart', 'Départ (JJ/MM/AAAA)')
+                .col-lg-6.col-md-6.fret-form-item.fret-form-item--less-padding
+                  +select-placeholder('multi-iles-schedule', 'Horaires souhaités', options)
+
+            .form-group.package-description__buttons.vol-group-handle-buttons
+              button.button-with-icon.button-with-icon--add.js-add-vol-group Ajouter un vol
+
+            //- Buttons
+            .fret-form-buttons
+              .col-lg-9.col-md-9.fret-form-item
+                .form-group.vol-radio-group
+                  .vol-radio-label Franchise bagage* :
+                  .vol-radios
+                    +radio('23kg', 'baggage-allowance', '23kg', '23 kg', true)
+                    +radio('46kg', 'baggage-allowance', '46kg', '46 kg', false)
+                .form-group.vol-checkbox-group
+                  - var link = '> Infos saisonnalité'
+                  +checkbox('my-flexible-date', 'Mes dates sont flexibles')
+                  a.vol-checkbox-group__link(href='#')= link
+              .col-lg-3.col-md-3.fret-form-item
+                button.form-btn(data-to-step='step-2') Suivant
+
+            .vol-partners
+              a.vol-partner
+                img(src='assets/images/old/cb1.png' alt='#')
+              a.vol-partner
+                img(src='assets/images/old/cb2.png' alt='#')
+              a.vol-partner
+                img(src='assets/images/old/cb3.png' alt='#')
+              

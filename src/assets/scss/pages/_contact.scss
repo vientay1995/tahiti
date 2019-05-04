@@ -1,0 +1,108 @@
+.contact-section {
+  @include bp(desktop) {
+    .assistance-section__list {
+      margin: 0 -15px;
+      width: auto;
+    }
+
+    .assistance-section__item {
+      width: calc(100% / 5);
+    }
+  }
+
+  &-inner {
+    @include bp(desktop) {
+      padding: 0 15px;
+    }
+  }
+
+  .white-block {
+    margin-bottom: 0;
+  }
+
+  .contact-section__first-block,
+  .contact-section__second-block {
+    padding-top: 70px;
+
+    @include bp(tab) {
+      padding-top: 40px;
+    }
+
+    @include bp(mob) {
+      padding-top: 30px;
+    }
+  }
+
+  .contact-block-title {
+    position: relative;
+    padding: 30px 0;
+
+    @include bp(mob) {
+      padding: 20px 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70px;
+      height: 1px;
+      background-color: $icon-color;
+    }
+  }
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3);
+  padding: 20px 10px;
+
+  @include bp(mob) {
+    width: calc(100% / 2);
+  }
+
+  &__link {
+    display: block;
+    transition: 0.3s;
+    background-color: $icon-color;
+    padding: 20px 15px;
+    color: white;
+    font-family: $ubuntu-light;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.2;
+
+    @include bp(mob) {
+      padding: 15px 0;
+      font-size: 14px;
+    }
+
+    &:hover {
+      background-color: $button-color;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  &__phone {
+    display: block;
+    padding-top: 15px;
+    text-align: center;
+    color: $title-color;
+    font-family: $ubuntu-light;
+    font-size: 14px;
+
+    @include bp(mob) {
+      padding-top: 10px;
+      font-size: 13px;
+    }
+  }
+}

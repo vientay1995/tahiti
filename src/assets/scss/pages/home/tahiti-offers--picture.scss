@@ -1,0 +1,201 @@
+.tahiti-offers-section--pic {
+  background: $white;
+
+  .page-title {
+    position: relative;
+    margin-bottom: 55px;
+    padding: 10px 0;
+
+    @include bp(mob) {
+      margin-bottom: 30px;
+    }
+
+    &__img {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+
+      @include bp(mob) {
+        display: none;
+      }
+    }
+  }
+
+  .tahiti-offer-buttons {
+    @include bp(mob) {
+      border-top: 1px dashed $border-color;
+      margin-top: 30px;
+    }
+  }
+}
+
+.tahiti-offer-pic {
+  &-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    position: relative;
+    overflow: hidden;
+
+    .__image {
+      width: 100%;
+    }
+
+    .__complement {
+      position: absolute;
+      z-index: 2;
+      left: -40px;
+      bottom: -169px;
+
+      &__icon {
+        border-radius: 50%;
+        color: $intro-text-color;
+        font-size: 240px;
+
+        &::before {
+          opacity: 0.2;
+        }
+      }
+
+      &__text {
+        position: absolute;
+        top: 17px;
+        left: 0;
+        width: 100%;
+        padding: 10px 55px;
+        color: $white;
+        font-family: $ubuntu-regular;
+        font-size: 13px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+
+    .__overlay {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 7%;
+      transition: 0.3s;
+      color: $white;
+      font-family: $ubuntu-light;
+      font-size: 16px;
+      z-index: 5;
+
+      &::before {
+        content: '\e940';
+        position: absolute;
+        bottom: -256px;
+        left: -110px;
+        color: $intro-text-color;
+        font-family: $icomoon;
+        font-size: 314px;
+        opacity: 0.5;
+      }
+
+      .tahiti-offer__button {
+        display: flex;
+        right: 7%;
+        bottom: 10%;
+        left: auto;
+      }
+    }
+  }
+
+  &__destination {
+    padding: 20px 0 10px;
+    font-family: $ubuntu-bold;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+    color: $black;
+    font-family: $ubuntu-light;
+    font-size: 30px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80%;
+      height: 1px;
+    }
+  }
+
+  &__with,
+  &__from {
+    color: $black;
+    font-family: $ubuntu-light;
+    font-size: 18px;
+  }
+
+  &__price {
+    font-family: $ubuntu-bold;
+    font-size: 32px;
+  }
+
+  &:hover {
+    .__overlay {
+      opacity: 1;
+    }
+  }
+
+  &:nth-child(2n + 1) {
+    .__complement__icon {
+      background: $icon-color;
+    }
+
+    .__overlay {
+      background: $icon-color;
+    }
+
+    .tahiti-offer-pic__destination {
+      color: $icon-color;
+    }
+
+    .tahiti-offer-pic__title {
+      &::before {
+        background: $icon-color;
+      }
+    }
+
+    .tahiti-offer-pic__price {
+      color: $offer-price-1;
+    }
+  }
+
+  &:nth-child(2n + 2) {
+    .__complement__icon {
+      background: $red;
+    }
+
+    .__overlay {
+      background: $red;
+    }
+
+    .tahiti-offer-pic__destination {
+      color: $red;
+    }
+
+    .tahiti-offer-pic__title {
+      &::before {
+        background: $red;
+      }
+    }
+
+    .tahiti-offer-pic__price {
+      color: $offer-price-2;
+    }
+  }
+}

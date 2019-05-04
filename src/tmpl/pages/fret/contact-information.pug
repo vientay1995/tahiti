@@ -1,0 +1,68 @@
+include ../../mixins/mixin-input
+
+section.fret-section.fret-contact-info.js-form-step.step-1
+    .container
+      .section-inner
+        .white-block.fret-block
+          .fret-block-inner
+            .block-intro
+              span Vous vous apprêtez à effectuer une demande de «fret réservé». 
+              br
+              span Votre demande sera traitée dans un délai de 3 jours ouvrés maximum.
+            
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-contact-information
+              span.block-title__text Coordonnées
+            
+            //- Expediteur
+            .form-group.form-group--fret
+              h4.form-group__title Expediteur
+              .row.form-group-inner
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-name', 'Nom*')
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-first-name', 'Prénom')
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-business', 'Entreprise')
+                .col-lg-7.col-md-7.fret-form-item
+                  +input-animation('fret-email', 'Email')
+                .col-lg-5.col-md-5.fret-form-item
+                  +input-animation('fret-client-reference', 'Référence client')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-portable', 'Tél. portable')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-office', 'Tél. bureau')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-home', 'Tél. domicile')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-fax', 'Fax')
+
+            //- Destinataire
+            .form-group.form-group--fret
+              h4.form-group__title Destinataire
+              .row.form-group-inner
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-name-2', 'Nom*')
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-first-name-2', 'Prénom')
+                .col-lg-4.col-md-4.fret-form-item
+                  +input-animation('fret-business-2', 'Entreprise')
+                .col-lg-7.col-md-7.fret-form-item
+                  +input-animation('fret-email-2', 'Email')
+                .col-lg-5.col-md-5.fret-form-item
+                  +input-animation('fret-client-reference-2', 'Référence client')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-portable-2', 'Tél. portable')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-office-2', 'Tél. bureau')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-home-2', 'Tél. domicile')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-fax-2', 'Fax')
+              
+            //- Buttons
+            .fret-form-buttons
+              .col-lg-9.col-md-9
+              .col-lg-3.col-md-3.fret-form-item
+                button.form-btn(data-to-step='step-2') Suivant
+                span.note-text *Champ obligatoire

@@ -1,0 +1,370 @@
+$field-height: 46px;
+$field-height-mobile: 30px;
+
+.select-item,
+.input-item {
+  display: flex;
+  align-items: center;
+
+  select,
+  input[type='text'] {
+    display: flex;
+    align-items: center;
+    height: $field-height;
+    border: none;
+    margin-right: 10px;
+    padding: 0 10px;
+    color: $title-color;
+    font-family: $ubuntu-regular;
+    font-size: 14px;
+
+    @include bp(mob) {
+      height: $field-height-mobile;
+    }
+  }
+
+  label {
+    margin: 0 10px 0 0;
+    font-family: $ubuntu-regular;
+    font-weight: normal;
+  }
+}
+
+.select-item {
+  &--placeholder {
+    background: $input-color;
+    z-index: 1;
+
+    &.max-index {
+      z-index: 9999999;
+    }
+
+    .fake-placeholder {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      transition: 0.3s;
+      color: $description-color;
+      font-family: $ubuntu-light;
+      z-index: 1;
+    }
+
+    .custom-select-wrapper {
+      flex-grow: 2;
+      width: 100%;
+      height: 49px;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 100%;
+        transition: 0.3s;
+        height: 2px;
+        background: $green;
+      }
+
+      .fake-list {
+        border-top: none;
+      }
+
+      .fake-field {
+        padding: 15px;
+        background: none;
+      }
+    }
+  }
+
+  &--placeholder.focused {
+    position: relative;
+    background: none;
+
+    .fake-placeholder {
+      top: 0;
+      color: $green;
+      font-size: 12px;
+    }
+
+    .custom-select-wrapper {
+      &::before {
+        left: 0;
+      }
+    }
+
+    .fake-field {
+      padding: 15px 15px 2px 0;
+    }
+  }
+}
+
+.custom-select {
+  position: relative;
+
+  select {
+    display: none;
+  }
+
+  &-wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    @include bp(mob) {
+      flex-grow: 2;
+    }
+  }
+
+  .placeholder {
+    display: none;
+  }
+
+  .fake-field {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-width: 100px;
+    height: $field-height;
+    padding: 0 10px;
+    background-color: $white;
+    cursor: pointer;
+    color: $black;
+
+    @include bp(mob) {
+      flex-grow: 2;
+      height: $field-height-mobile;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 5px solid $red;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+    }
+  }
+
+  .fake-list {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    border: 1px solid $nav-btn;
+    background-color: $white;
+    color: $title-color;
+
+    @include bp(mob) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0.9;
+      overflow: auto;
+      justify-content: center;
+      align-items: center;
+      z-index: 999999;
+    }
+
+    &.active {
+      display: flex;
+      z-index: 9999;
+    }
+
+    li {
+      cursor: pointer;
+      padding: 5px 0;
+    }
+  }
+}
+
+.input-animation {
+  position: relative;
+  background: $input-color;
+  width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 100%;
+    transition: 0.3s;
+    background: $green;
+    height: 2px;
+  }
+
+  input {
+    position: relative;
+    transition: 0.3s;
+    z-index: 2;
+    background: none;
+    font-family: $ubuntu-light;
+  }
+  
+  span {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transition: 0.3s;
+    color: $description-color;
+    font-family: $ubuntu-light;
+    font-weight: normal;
+    z-index: 1;
+  }
+
+  &.focused {
+    background: none;
+
+    &::before {
+      left: 0;
+    }
+
+    input {
+      padding: 20px 0 10px;
+    }
+
+    span {
+      top: 0px;
+      color: $green;
+      font-size: 12px;
+    }
+  }
+}
+
+.input-animation--datepicker {
+  .icon-calendar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: $red;
+    font-size: 18px;
+  }
+}
+
+.input-standard {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 7px 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $white;
+    opacity: 0.7;
+  }
+
+  &__txt {
+    width: 100%;
+    background: $input-color;
+    border: none;
+    padding: 7px 15px;
+    font-family: $ubuntu-regular;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  label.error {
+    position: absolute;
+    top: -39px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $red;
+    color: $white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top: 6px solid $red;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+  }
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__label {
+    position: relative;
+    padding-left: 10px;
+    font-weight: 400;
+
+    &::before {
+      content: '\e90e';
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      font-family: $icomoon;
+      color: $red;
+    }
+  }
+
+  input[type='radio'] {
+    margin: 0;
+    opacity: 0;
+
+    &:checked + .radio-item__label::before {
+      content: '\e90f'
+    }
+  }
+}
+
+.checkbox-item {
+  position: relative;
+  display: flex;
+
+  &__input {
+    opacity: 0;
+    &:checked + .checkbox-item__label::before {
+      content: '\f14a';
+    }
+  }
+
+  &__label {
+    padding-left: 10px; 
+    color: $category-color;
+    font-weight: 400;
+
+    &::before {
+      content: '\f0c8';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: $awesome;
+      font-weight: 100;
+      color: $red;
+    }
+  }
+}
+
+.textarea-item {
+  width: 100%;
+  min-height: 300px;
+  border: 1px solid $green;
+  padding: 30px;
+  font-family: $ubuntu-regular;
+  font-size: 16px;
+}

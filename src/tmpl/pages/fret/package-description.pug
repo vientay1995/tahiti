@@ -1,0 +1,79 @@
+include ../../mixins/mixin-input
+include ../../mixins/mixin-select
+include ../../mixins/mixin-radio
+
+section.fret-section.fret-contact-info.js-form-step.step-3
+    .container
+      .section-inner
+        .white-block.fret-block
+          .fret-block-inner
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-open-box
+              span.block-title__text Description des groupes de colis
+            
+            .form-group
+              .form-group-inner
+                .col-full.fret-form-item
+                  span Un groupe de colis est constitué d’un ou plusieurs colis de taille, poids et type de marchandise identiques.
+                .col-full.fret-form-item.fret-form-item--radios
+                  +radio('fret-package-1', 'fret-package', 'Fret reserve', 'Fret reserve', true)
+                  +radio('fret-package-2', 'fret-package', 'Fret normal', 'Fret normal')
+
+            //- Group 1
+            .form-group.form-group--fret.package-description-group
+              h4.form-group__title Groupe 1
+              .row.form-group-inner
+                - var options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6']
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-quantity', 'Quantité')
+                .col-lg-9.col-md-9.fret-form-item
+                  +select-placeholder('fret-merchandise-type', 'Type de marchandise', options)
+
+                .col-full.fret-form-item.fret-form-item--center
+                  span Il est conseillé d’effectuer une réservation pour l’envoi en fret de ce type de marchandise.
+
+                .col-lg-9.col-md-9.fret-form-item.fret-form-item--center
+                  span Merci de préciser si votre marchandise doit être réfrigérée ou congelée.
+                .col-lg-3.col-md-3.fret-form-item
+                  +select-placeholder('fret-special-treatment', 'Traitement special', options)
+
+                .col-lg-9.col-md-9.fret-form-item.fret-form-item--center
+                  span Merci de préciser la valeur de votre marchandise.
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-parcel-value', 'Valeur du colis')
+
+                .col-lg-9.col-md-9.fret-form-item
+                  +input-animation('fret-parcel-content', 'Contenu exact des colis')
+                .col-lg-3.col-md-3.fret-form-item
+                  +select-placeholder('fret-packaging', 'Emballage', options)
+
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-length', 'Longueur en cm')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-width', 'Largeur en cm')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-height', 'Hauteur en cm')
+                .col-lg-3.col-md-3.fret-form-item
+                  +input-animation('fret-total-weight', 'Poids total / colis en kg')
+                
+                .col-full.fret-form-item.fret-form-item--center
+                  span Une tarification spéciale est appliquée aux colis volumineux ou présentant un poids très faible par rapport à son volume. Exemple : une glacière vide. Remplissez les dimensions de votre colis pour être assuré d’obtenir le tarif le plus juste
+            
+            .form-group.package-description__buttons.group-handle-buttons
+              button.button-with-icon.button-with-icon--add.js-fret-add-group Ajouter un groupe de colis
+              button.button-with-icon(data-to-step='step-3a') Calculer une estimation de tarif
+                
+              
+            //- Buttons
+            .form-group.package-description__buttons
+              button.form-btn.form-btn--green(data-to-step='step-2') Retour
+              button.form-btn.js-sync-data(data-to-step='step-4') Envoyer la demande
+
+            .package-description__texts
+              .package-description__text
+                h4 Sed ut perspiciatis
+                span Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+              .package-description__text
+                h4 Sed ut perspiciatis
+                span Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae di

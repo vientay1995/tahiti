@@ -1,0 +1,108 @@
+.top-header {
+  background-color: $nav-bg;
+  color: $white;
+  font-size: 13px;
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    
+    @include bp(desktop) {
+      padding: 5px 15px;
+    }
+  }
+}
+
+.top-header__welcome {
+  display: none;
+  font-family: $ubuntu-bold;
+  font-size: 14px;
+
+  @include bp(desktop) {
+    display: block;
+  }
+}
+
+.top-header__navs {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 2;
+
+  @include bp(tab) {
+    justify-content: flex-start;
+  }
+
+  @include bp(mob) {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.top-header__nav-list {
+  @extend .top-header__navs;
+  margin: 0;
+  padding: 0;
+
+  @include bp(tab) {
+    justify-content: flex-start;
+  }
+
+  @include bp(mob) {
+    flex-direction: row;
+  }
+}
+
+.top-header__nav-item {
+  &__link {
+    padding: 0 10px;
+    color: $white;
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}
+
+.top-header__search {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: 5px;
+  background: $white;
+
+  @include bp(mob) {
+    display: none;
+  }
+
+  &__input {
+    width: 100px;
+    background: none;
+    border: none;
+    color: $black;
+  }
+
+  &__button {
+    padding: 5px;
+    border: none;
+    background: none;
+    color: $black;
+  }
+}
+
+.top-header__user {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+
+  &__icon {
+    color: $red;
+  }
+
+  &__text {
+    padding-left: 6px;
+    color: $white;
+  }
+}

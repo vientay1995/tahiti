@@ -1,0 +1,206 @@
+@import './fret/flight-tables';
+@import './fret/conditions';
+@import './fret/summary';
+
+.breadcrumbs-section {
+  padding: 10px 0 40px;
+
+  @include bp(mob) {
+    display: none;
+  }
+}
+
+.fret-block {
+  padding: 35px 200px;
+
+  @include bp(mob) {
+    padding: 30px 15px;
+  }
+
+  .block-intro {
+    text-align: center;
+  }
+
+  .input-animation {
+    width: 100%;
+  }
+}
+
+.form-group--fret {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $green;
+}
+
+.form-group-inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px -2px;
+}
+
+.fret-form-item {
+  padding: 10px 2px;
+  color: $description-color;
+  font-family: $ubuntu-light;
+
+  @include bp(mob) {
+    width: 100%;
+    padding: 2px;
+  }
+
+  &--less-padding {
+    padding: 2px 10px;
+  }
+
+  &--radios {
+    display: flex;
+    align-items: center;
+
+    .radio-item:not(:last-child) {
+      padding-right: 25px;
+    }
+  }
+
+  &--center {
+    display: flex;
+    align-items: center;
+    min-height: 69px;
+  }
+}
+
+.block-title--fret {
+  position: relative;
+  margin: 20px 0 40px;
+
+  .block-title__icon {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    color: $green;
+    font-size: 40px;
+
+    @include bp(mob) {
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+      font-size: 30px;
+    }
+  }
+}
+
+.form-group__title {
+  color: $green;
+  font-family: $ubuntu-regular;
+  font-size: 17px;
+}
+
+.fret-form-buttons {
+  display: flex;
+
+  .note-text {
+    display: block;
+    padding-top: 10px;
+  }
+}
+
+.package-description {
+  &-group {
+    position: relative;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    .form-btn {
+      width: auto;
+      padding: 20px 75px;
+    }
+  }
+
+  &__texts {
+    padding: 50px 0 20px;
+  }
+
+  &__text {
+    padding: 15px 0;
+    color: $description-color;
+    font-family: $ubuntu-light;
+
+    h4 {
+      padding-bottom: 10px;
+      font-family: $ubuntu-medium;
+      font-size: 14px;
+    }
+  }
+}
+
+.fret-groupe-close-btn {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: -10px;
+  right: 0;
+  background: $red;
+  width: 25px;
+  height: 25px;
+  border: none;
+
+  .icon-remove {
+    position: relative;
+    top: 0;
+    color: $white;
+    font-size: 15px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.fret-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.fret-note {
+  padding: 10px 0;
+  font-family: $ubuntu-light;
+  font-size: 11px;
+}
+
+.fret-block-with-header {
+  padding: 0;
+
+  &-inner {
+    padding: 40px 200px;
+
+    @include bp(mob) {
+      padding: 30px 15px;
+    }
+  }
+}
+
+.fret-header {
+  background: $title-color;
+  padding: 25px 15px;
+  color: $white;
+  font-family: $ubuntu-medium;
+  font-size: 18px;
+  text-align: center;
+}
+
+.group-handle-buttons {
+  @include bp(mob) {
+    display: flex;
+    flex-direction: column;
+
+    .button-with-icon {
+      margin: 3px 0;
+    }
+  }
+}

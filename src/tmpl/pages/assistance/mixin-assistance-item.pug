@@ -1,0 +1,15 @@
+mixin assistance-item(title, imagePath)
+  //- ITEM
+  .assistance-section__item.assistance-section__item--icon-type
+    .assistance-section__item__inner
+      a.assistance-section__item__image(href='#')
+        img(src=imagePath alt='#')
+      a.assistance-section__item__title(href='#')= title
+
+mixin assistance-item--image(title, imagePath)
+  //- ITEMX
+  .assistance-section__item
+    .assistance-section__item__inner
+      a.assistance-section__item__image(href='#')
+        img(src=imagePath alt='#')
+      a.assistance-section__item__title(href='#')= title

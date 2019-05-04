@@ -1,0 +1,11 @@
+include ../../mixins/mixin-listing-block
+
+.col-lg-7.col-md-6.col-sm-6.destination-column-left
+  .destination-content__block.destination-reasons
+    - var reasons = ['Un des plus beaux lagons du monde aux eaux limpides, jalonné d’îlots paradisiaques, ont valu à Bora Bora le nom de "Perle du Pacifique".', 'Des hôtels de luxe rivalisant de beauté, mettant à l’honneur des bungalows pilotis mais aussi des villas posées sur les plages ou dans des jardins tropicaux.','Une île appréciée des couples, pour son cadre romantique, mais aussi des familles ou amis qui y trouvent une offre hôtelière diversifiée.', 'Plongée au milieu de raies, de requins et de poissons multicolores.', 'Des tours en 4x4 dynamiques et intéressants (panoramas, artisans, sites historiques, etc.).', 'Le « Heiva » au mois de juillet (se renseigner au préalable sur les dates).', 'Une multitude d’activités terrestres et nautiques.']
+    +listing-block('Les raisons d’y aller', reasons)
+
+  .destination-text-block.destination-text-block--with-padding
+    h6.destination-block__title L’aéroport de Bora Bora
+    .block-intro
+      span Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea

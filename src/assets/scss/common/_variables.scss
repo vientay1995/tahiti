@@ -1,0 +1,45 @@
+$white: #fff;
+$black: #000;
+$red: #e20026;
+$green: #02b1af;
+$blue: #64cfce;
+
+$black-transparent: rgba(0, 0, 0, 0.3);
+$white-transparent: rgba(255, 255,255, 0.8);
+
+$alert-color: #ffff00;
+$bg-color: #efeff0;
+$block-title-color: #353535;
+$border-color: #e3e3e4;
+$button-color: $red;
+$icon-color: #12c6b2;
+$icon-color-2: $green;
+$input-color: #f4f2f1;
+$intro-text-color: #717171;
+$note-color: #999;
+$title-color: #535252;
+$white: #fff;
+$description-color: #575757;
+$category-color: #656363;
+$body-bg: $white;
+$nav-bg: #535252;
+$sub-nav: #f5f5f7;
+$newsletter-bg: #014655;
+$nav-btn: #cbcbcb;
+$offer-1: #b22987;
+$offer-2: #b5d856;
+$offer-3: #98c0ba;
+$offer-price-1: #014655;
+$offer-price-2: #80071b;
+$outline-color: rgba(226, 0, 38, 0.25);
+
+/**
+ * Bootstrap Variable overload from the vendor
+ * /vendor/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ * Overloading MUST BE USED IN PRIORITY before overriding
+ */
+$icon-font-path: '../../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;

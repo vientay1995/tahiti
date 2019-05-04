@@ -1,0 +1,116 @@
+include ../../mixins/mixin-radio
+include ../../mixins/mixin-checkbox
+include ./mixin-passenger-info
+include ./mixin-passenger-info-custom
+
+section.booking-section.grey-big-pat-bg
+  .booking-section-inner
+    ul.booking-tabs
+      li.booking-tab
+        a.booking-tab__link.active(href='#')
+          i.icon-plane
+          span Réserver
+      li.booking-tab
+        a.booking-tab__link(href='#')
+          i.icon-home
+          span Vol+hébergement
+      li.booking-tab
+        a.booking-tab__link(href='#')
+          i.icon-clock
+          span Arrivées / départs
+      li.booking-tab
+        a.booking-tab__link(href='#')
+          i.icon-note-book
+          span Gérer ma réservation
+      li.booking-tab
+        a.booking-tab__link(href='#')
+          i.icon-check
+          span S'enregistrer en ligne
+      li.booking-tab
+        a.booking-tab__link(href='#')
+          i.icon-suitcase
+          span Bagages
+
+    form.booking-content(id='booking-form')
+      .booking-content-group
+        +radio('round-trip', 'ticket-type', 'aller_retour', 'ALLER - RETOUR', true)
+        +radio('one-way', 'ticket-type', 'aller_simple', 'ALLER SIMPLE')
+        - var link = '> Multi-îles'
+        a.booking-content__link(href='#')= link
+      
+      .booking-content-inputs
+        .col-lg-4.col-md-3.booking-input
+          .booking-input-inner
+            span.booking-input__label De:
+            input.booking-input__txt(type='text' name='b-depart' placeholder='Sélectionnez une île' required)
+        .col-lg-4.col-md-3.booking-input
+          .booking-input-inner
+            span.booking-input__label À:
+            input.booking-input__txt(type='text' name='b-arrive' placeholder='Sélectionnez une île' required)
+        .col-lg-2.col-md-3.booking-input.booking-input--date
+          .booking-input-inner
+            span.booking-input__label Départ:
+            input.booking-input__txt.datepicker-field(type='text' name='b-depart-date' placeholder='27/11/2018' readonly)
+        .col-lg-2.col-md-3.booking-input.booking-input--date
+          .booking-input-inner
+            span.booking-input__label Retour:
+            input.booking-input__txt.datepicker-field(type='text' name='b-retour-date' placeholder='27/11/2018' readonly)
+      
+      .booking-content-group
+        +checkbox('flexible-date', 'Mes dates sont flexibles')
+        +checkbox('discount', "J'ai une carte de réduction")
+        - var link2 = '> Infos Saisonnalité'
+        a.booking-content__link.booking-content__link--green(href='#')= link2
+      
+      .booking-content-group
+        label.booking-select
+          - var n = 1
+          span.booking-select__text Passager(s) *
+          select.booking-select__select(name='passengers')
+            while n <= 9
+              if n === 1
+                option(selected)= n++
+              else
+                option()= n++
+        
+        .passengers-info
+          - var passengerInfoOpts = ['Adultes (12 ans et plus)', 'Enfants (de 2 ans à 11 ans)', 'Bébés (moins de 2 ans)']
+            +passenger-info(passengerInfoOpts, '1')
+            +passenger-info(passengerInfoOpts, '2')
+            +passenger-info(passengerInfoOpts, '3')
+            +passenger-info(passengerInfoOpts, '4')
+            +passenger-info(passengerInfoOpts, '5')
+            +passenger-info(passengerInfoOpts, '6')
+            +passenger-info(passengerInfoOpts, '7')
+            +passenger-info(passengerInfoOpts, '8')
+            +passenger-info(passengerInfoOpts, '9')
+
+        //- CUSTOM
+        .passengers-info-custom
+          - var passengerInfoCustom = ['Faites votre choix', 'Carte Jeune', 'Carte Marama', 'Carte Famille - Parent', 'Carte Famille - Adolescent (12 à 15 ans)', 'Carte Famille - Enfant (2 à 11 ans)', 'Carte Famille - Bébé (- de 2 ans)', 'Carte Vistah', 'Bébé (- 2 ans)']
+            +passenger-info-custom(passengerInfoCustom, '1')
+            +passenger-info-custom(passengerInfoCustom, '2')
+            +passenger-info-custom(passengerInfoCustom, '3')
+            +passenger-info-custom(passengerInfoCustom, '4')
+            +passenger-info-custom(passengerInfoCustom, '5')
+            +passenger-info-custom(passengerInfoCustom, '6')
+            +passenger-info-custom(passengerInfoCustom, '7')
+            +passenger-info-custom(passengerInfoCustom, '8')
+            +passenger-info-custom(passengerInfoCustom, '9')
+        
+        .booking-other
+          .booking-links
+            a.booking-link 
+              img.booking-link__img(src='assets/images/old/cb1.png' alt='#')
+            a.booking-link 
+              img.booking-link__img(src='assets/images/old/cb2.png' alt='#')
+            a.booking-link 
+              img.booking-link__img(src='assets/images/old/cb3.png' alt='#')
+            a.booking-link 
+              img.booking-link__img(src='assets/images/old/cb4.png' alt='#')
+            a.booking-link 
+              img.booking-link__img(src='assets/images/old/cb5.png' alt='#')
+            a.booking-link 
+              img.booking-link__img(src='assets/images/old/cb6.png' alt='#')
+          .booking-buttons
+            button.form-btn(type='submit' id='booking-form-submit') Réserver

@@ -1,0 +1,379 @@
+.booking-section {
+  display: flex;
+  flex-direction: column;
+  background: url('../images/old/image_02.jpg') no-repeat center center/cover;
+  width: 100%;
+
+  &-inner {
+    position: relative;
+    background: $white;
+    width: 100%;
+    max-width: 1264px;
+    margin: 0 auto;
+
+    @include bp(desktop) {
+      transform: translateY(-68px);
+    }
+  }
+}
+
+.booking-tabs {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: $nav-bg;
+}
+
+.booking-tab {
+  flex-grow: 2;
+  flex-direction: column;
+  height: 68px;
+
+  &:not(:first-child) {
+    display: none;
+
+    @include bp(desktop) {
+      display: block;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: $white;
+    padding: 20px 5px;
+    height: 100%;
+
+    i {
+      font-size: 22px;
+    }
+
+    .icon-plane {
+      font-size: 28px;
+
+      @include bp(tab) {
+        position: relative;
+        top: -7px;
+        font-size: 45px;
+      }
+
+      @include bp(mob) {
+        position: relative;
+        top: -7px;
+        font-size: 45px;
+      }
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      padding-left: 5px;
+      line-height: 1;
+      font-family: $ubuntu-regular;
+      font-size: 17px;
+
+      @include bp(tab) {
+        font-size: 29px;
+      }
+
+      @include bp(mob) {
+        font-size: 29px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background: $block-title-color;
+      color: $white;
+      
+      i {
+        color: $green;
+      }
+    }
+
+    &.active {
+      background: $white;
+      color: $nav-bg;
+      font-family: $ubuntu-light;
+
+      i {
+        color: $green;
+      }
+    }
+  }
+}
+
+.booking-content {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 25px 10px;
+
+  &-group {
+    display: flex;
+
+    @include bp(mob) {
+      flex-wrap: wrap;
+    }
+
+    .radio-item {
+      padding-right: 25px;
+      font-family: $ubuntu-light;
+
+      &__label {
+        &::before {
+          color: $title-color;
+        }
+      }
+
+      input[type='radio']:checked+.radio-item__label::before {
+        color: $title-color;
+      }
+    }
+  }
+
+  .checkbox-item {
+    padding-right: 25px;
+    font-family: $ubuntu-light;
+
+    @include bp(mob) {
+      width: 50%;
+      padding-right: 10px;
+    }
+  }
+
+  &__link {
+    color: $title-color;
+    font-family: $ubuntu-regular;
+
+    &:hover {
+      color: $title-color;
+      text-decoration: underline;
+    }
+
+    &--green {
+      color: $green;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  &-inputs {
+    display: flex;
+    margin: 0 -5px;
+    padding: 20px 0 15px;
+
+    @include bp(mob) {
+      flex-direction: column;
+    }
+  }
+}
+
+.booking-input {
+  padding: 0 5px;
+  color: $nav-bg;
+  font-family: $ubuntu-light;
+
+  @include bp(mob) {
+    margin: 8px 0;
+  }
+
+  label.error {
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $red;
+    color: $white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top: 6px solid $red;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+  }
+
+  &--date::after {
+    content: '\e90d';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    color: $red;
+    font-family: $icomoon;
+    font-size: 16px;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    background: $input-color;
+    padding: 5px 15px;
+  }
+
+  &__label {
+    padding-right: 5px;
+    font-family: $ubuntu-regular;
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  &__txt {
+    flex-grow: 2;
+    border: none;
+    background: none;
+    padding: 10px 0;
+  }
+}
+
+.booking-select {
+  position: relative;
+  margin: 10px 25px 10px 0;
+
+  @include bp(mob) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 7px 0;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    right: 13px;
+    border-top: 4px solid $black;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+
+  &::after {
+    top: 15px;
+    transform: rotate(180deg);
+  }
+
+  &__text {
+    padding-right: 5px;
+    font-family: $ubuntu-regular;
+    font-weight: 100;
+  }
+
+  &__select {
+    background: none;
+    border: 1px solid $border-color;
+    border-radius: 0;
+    appearance: none;
+    padding: 10px 25px 10px 15px;
+    max-width: 210px;
+    font-family: $ubuntu-regular;
+    font-weight: normal;
+
+    @include bp(mob) {
+      flex-grow: 2;
+      max-width: 9999999px;
+    }
+
+    &:focus {
+      outline: none;
+      font-family: $ubuntu-regular;
+      font-weight: 100;
+    }
+  }
+}
+
+.passengers-info,
+.passengers-info-custom {
+  @include bp(mob) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.passenger-info-item {
+  display: flex;
+  align-items: center;
+
+  @include bp(mob) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.passenger-input {
+  display: flex;
+  height: 100%;
+
+  @include bp(mob) {
+    width: 100%;
+  }
+
+  &__txt {
+    padding: 10px 15px;
+    border: none;
+    background: $input-color;
+    color: $description-color;
+    font-family: $ubuntu-regular;
+    font-size: 16px;
+
+    @include bp(mob) {
+      width: 100%;
+    }
+  }
+}
+
+.booking-other {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  @include bp(mob) {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.booking-links {
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+
+  @include bp(mob) {
+    justify-content: center;
+    padding: 10px 0;
+  }
+}
+
+.booking-link {
+  margin-left: 3px;
+
+  &__img {
+    width: auto;
+    height: 24px;
+  }
+}
+
+.booking-buttons {
+  @include bp(mob) {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .form-btn {
+    padding: 18px 53px;
+  }
+}

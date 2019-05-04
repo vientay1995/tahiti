@@ -1,0 +1,25 @@
+extends tmpl/layout/layout.pug
+include tmpl/mixins/mixin-breadcrumbs
+
+block content
+  - var actuDescription = 'Sed ut perspiciatis unde omnis iste natus error sit perspiciatis unde omnis iste natus perspiciatis unde omnis iste natus error sit perspiciatis unde omnis iste natus...'
+
+  section.page-title-section
+    .container
+      h2.page-title
+        img.page-title__icon(src='assets/images/icons/triangle-double-circle-icon.png' alt='#')
+        span.page-title__text Réserver un envoi de fret
+  
+  section.breadcrumbs-section
+    - var bcItems = ['Vols', 'Passagers', 'Contact', 'Résumé']
+    .container
+      .section-inner
+        +breadcrumbs(bcItems, 'js-bc-step bc-step-')
+
+  include tmpl/pages/multi-iles/vols
+  include tmpl/pages/multi-iles/passengers
+  include tmpl/pages/multi-iles/contact
+  include tmpl/pages/multi-iles/summary
+  include tmpl/pages/fret/conditions
+  include tmpl/pages/home/tahiti-offers
+  

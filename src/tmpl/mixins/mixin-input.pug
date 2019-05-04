@@ -1,0 +1,19 @@
+mixin input(id, label, placeholder)
+  .input-item
+    label.input-item__label(for= id)= label
+    input.input-item__input(name= id, id= id, placeholder= placeholder, type='text')
+
+mixin input-standard(id, placeholder, isRequired, dataError)
+  label.input-standard(for= id)
+    input.input-standard__txt(type='text', id= id, name= id, placeholder= placeholder, required= isRequired, data-error= dataError)
+
+mixin input-animation(id, label)
+  label.input-animation(for='input-1')
+    input.form-txt(type='text' name=id id=id)
+    span= label
+
+mixin input-animation-datepicker(id, label)
+  label.input-animation.input-animation--datepicker(for='input-1')
+    input.form-txt.datepicker-field(type='text' name=id id=id readonly)
+    span= label
+    i.icon-calendar

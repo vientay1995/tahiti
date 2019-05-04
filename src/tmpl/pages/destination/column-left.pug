@@ -1,0 +1,14 @@
+include ../../mixins/mixin-listing-block
+
+.col-lg-7.col-md-6.col-sm-6.destination-column-left
+  .destination-content__block.destination-reasons
+    - var reasons = ['Un des plus beaux lagons du monde aux eaux limpides, jalonné d’îlots paradisiaques, ont valu à Bora Bora le nom de "Perle du Pacifique".', 'Des hôtels de luxe rivalisant de beauté, mettant à l’honneur des bungalows pilotis mais aussi des villas posées sur les plages ou dans des jardins tropicaux.','Une île appréciée des couples, pour son cadre romantique, mais aussi des familles ou amis qui y trouvent une offre hôtelière diversifiée.', 'Plongée au milieu de raies, de requins et de poissons multicolores.', 'Des tours en 4x4 dynamiques et intéressants (panoramas, artisans, sites historiques, etc.).', 'Le « Heiva » au mois de juillet (se renseigner au préalable sur les dates).', 'Une multitude d’activités terrestres et nautiques.']
+    +listing-block('Les raisons d’y aller', reasons)
+
+  .destination-content__block.destination-not-miss
+    - var doNotMiss = ['Le lagon.', 'La célèbre plage de Matira.', 'Un spectacle de danse traditionnelle interprété par les talentueuses danseuses de l’île.', 'Les canons et vestiges de la Seconde Guerre Mondiale.', 'Le musée de la Marine.', 'Quelques anciens « marae » (sites archéologiques).', 'Le centre des tortues marines situé au sein de l’hôtel Le Méridien.']
+    +listing-block('à ne pas manquer', doNotMiss)
+  
+  .destination-content__block.destination-you-know
+    - var youKnow = ['L’ancien nom de Bora Bora est Vavau.', 'La véritable orthographe de Bora Bora est en réalité « Pora Pora » (le P se prononce B).', 'Bora Bora a été choisie comme terre adoptive par les célèbres explorateurs Alain Gerbault et Paul Emile Victor.', 'Les Etats-Unis y ont installé une base militaire durant la seconde guerre mondiale. Des vestiges de cette époque peuvent encore être observés (canons notamment).']
+    +listing-block('Le saviez-vous ?', youKnow)

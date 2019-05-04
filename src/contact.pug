@@ -1,0 +1,45 @@
+extends tmpl/layout/layout.pug
+include tmpl/pages/assistance/mixin-assistance-item.pug
+include tmpl/pages/contact/mixin-contact-item.pug
+
+block content
+  section.contact-section
+    .container
+      .contact-section-inner
+        h2.page-title
+          img.page-title__icon(src='assets/images/icons/triangle-double-circle-icon.png', alt='#')
+          span.page-title__text Aide et contacts
+      
+    //- FIRST BLOCK
+    .white-block.contact-section__first-block
+      .container
+        .contact-section-inner
+          .block-intro 
+            span Vous avez des questions concernant votre voyage Air Tahiti ? Afin de répondre au mieux à vos attentes, nous mettons à votre disposition une rubrique d’aide contenant toutes les réponses aux questions les plus fréquentes, classées par thème : 
+          .assistance-section__list
+            +assistance-item('Réserver, modifier ou compléter ma réservation', 'assets/images/icons/calendar.png')
+            +assistance-item('Consulter ma réservation Payer ma réservation', 'assets/images/icons/toto-list.png')
+            +assistance-item('Annulation Remboursement', 'assets/images/icons/x.png')
+            +assistance-item('Informations vols Arrivées / Départs du jour', 'assets/images/icons/plane-icon.png')
+            +assistance-item('Programme de fidélité Kaveka', 'assets/images/icons/person.png')
+            +assistance-item('Tarifs et cartes de réduction', 'assets/images/icons/invoice.png')
+            +assistance-item('Bagages, fret, animaux', 'assets/images/icons/suitcase.png')
+            +assistance-item('Assistance particulière Objets perdus / trouvés', 'assets/images/icons/disabled_people.png')
+            +assistance-item('Enregistrement Embarquement', 'assets/images/icons/reception.png')
+
+    //- SECOND BLOCK
+    .white-block.contact-section__second-block
+      .container
+        .contact-section-inner
+          h3.block-title.contact-block-title
+            span.block-title__text Nous contacter
+          .block-intro
+            span Vous ne trouvez pas l’information souhaitée sur notre site internet ? Contactez-nous :
+          .contact-list
+            +contact-item('Contacter le service vente à distance', 'Téléphone : 40 86 42 42')
+            +contact-item('Trouver une agence Air Tahiti', 'Téléphone : 40 86 42 42')
+            +contact-item('Contacter le service fret', 'Téléphone : 40 86 42 42')
+            +contact-item('Contacter Séjours dans les îles', 'Téléphone : 40 86 42 42')
+            +contact-item('Demande de dons ou sponsoring', 'Téléphone : 40 86 42 42')
+            +contact-item('Nous envoyer un email', 'Téléphone : 40 86 42 42')
+

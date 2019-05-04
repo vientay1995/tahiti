@@ -1,0 +1,79 @@
+{
+    "base": {
+        "src": "src/",
+        "build": "build/",
+        "compile": "compile/",
+        "test": "test/",
+        "vendor": "vendor/",
+        "tmp": ".tmp/",
+        "dist": "dist/"
+    },
+    "path": {
+        "sass": "assets/scss/",
+        "sassBootstrap": "assets/scss/bootstrap/",
+        "css": "assets/css/",
+        "images": "assets/images/",
+        "sprites": "assets/sprites/",
+        "fonts": "assets/fonts/",
+        "i18n": "assets/i18n/",
+        "js": "assets/js/",
+        "root": "root/"
+    },
+    "files": {
+        "index": "index.html",
+        "pugindex": "index.pug",
+        "html": "**/*.html",
+        "pug": "**/*.pug",
+        "tmpl": "**/*.tmpl",
+        "sass": "app.scss",
+        "sassAll": "**/*.scss",
+        "css": "**/*.css",
+        "js": "**/*.js",
+        "ts": "**/*.ts",
+        "fonts": "**",
+        "images": "{,*/,*/*/}*.{png,jpg,jpeg,gif}",
+        "root": "**",
+        "hidden": ".**"
+    },
+    "vendor":{
+        "bootstrapCss": "node_modules/bootstrap/scss/**/*", 
+        "jsCss": [
+            "node_modules/@fortawesome/fontawesome-free/css/all.css",
+            "node_modules/@fortawesome/fontawesome-free/css/regular.css",
+            "node_modules/slick-carousel/slick/slick-theme.css",
+            "node_modules/slick-carousel/slick/slick.css",
+            "node_modules/daterangepicker/daterangepicker.css",
+            "node_modules/jquery-ui/themes/base/autocomplete.css"
+        ],
+        "assets": [
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.eot",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.svg",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.eot",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.svg",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.eot",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.svg",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff",
+          "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2",
+          "node_modules/slick-carousel/slick/fonts/slick.eot",
+          "node_modules/slick-carousel/slick/fonts/slick.svg",
+          "node_modules/slick-carousel/slick/fonts/slick.ttf",
+          "node_modules/slick-carousel/slick/fonts/slick.woff",
+          "node_modules/slick-carousel/slick/ajax-loader.gif"
+      ]
+    },
+    "env": {
+        "prod": {
+            "api_url": ""
+        },
+        "dev": {
+            "api_url": ""
+        }
+    }
+}

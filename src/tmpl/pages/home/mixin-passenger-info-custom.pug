@@ -1,0 +1,9 @@
+mixin passenger-info-custom(opts, idx)
+  .passenger-info-item
+    label.booking-select.booking-select--passenger
+      span.booking-select__text= idx + '*'
+      select.booking-select__select(name='passenger-info-' + idx)
+        each opt, index in passengerInfoCustom
+          option(value= index + 1)= opt
+    .passenger-input
+      input.passenger-input__txt(type='text', name='passenger-option-input-' + idx, placeholder='Numéro de carte')

@@ -1,0 +1,38 @@
+extends tmpl/layout/layout.pug
+include tmpl/pages/assistance/mixin-assistance-item.pug
+
+block content
+  section.assistance-section
+    .container
+      .assistance-section-inner
+        h2.page-title
+          img.page-title__icon(src='assets/images/icons/triangle-double-circle-icon.png', alt='#')
+          span.page-title__text Bagages
+        
+        //- FIRST BLOCK
+        .white-block.assistance-section__first-block
+          .block-intro 
+            span Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+          .assistance-section__list
+            +assistance-item('Bagages en cabine', 'assets/images/icons/back-pack.png')
+            +assistance-item('Bagages en soute', 'assets/images/icons/suitcase.png')
+            +assistance-item('Équipements de sport et bagages spéciaux', 'assets/images/icons/vehicle.png')
+            +assistance-item('Articles interdits et réglementés', 'assets/images/icons/warning.png')
+            +assistance-item('Bagages perdus, retardés ou endommagés', 'assets/images/icons/which-suitcase.png')
+            +assistance-item('Animaux', 'assets/images/icons/pet-head.png')
+            +assistance-item('Bagages enfants et bébés', 'assets/images/icons/baby.png')
+            +assistance-item('Consigne à bagages', 'assets/images/icons/house-luggage.png')
+
+        //- SECOND BLOCK
+        .white-block.assistance-section__second-block
+          .block-title
+            img.block-title__icon(src='assets/images/icons/ideas.png')
+            span.block-title__text Conseils
+          
+          //- CONSEILS
+          .conseils
+            .block-intro.conseil__item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui rationevoluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+
+            .block-intro.conseil__item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui rationevoluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+
+            .block-intro.conseil__item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui rationevoluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,

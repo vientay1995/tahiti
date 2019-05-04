@@ -1,0 +1,27 @@
+mixin magazine-item(title, imagePath)
+  - var description = 'Sed ut perspiciatis unde omnis iste natus error sit...'
+
+  .magazine-item
+    .magazine-item__info
+      img.magazine-item__info__image(src=imagePath alt='#')
+
+      .magazine-item__info__description
+        .__items
+          .__item
+            h4.__item__title Destination
+            span.__item__description= description
+          .__item
+            h4.__item__title Nature
+            span.__item__description= description
+          .__item
+            h4.__item__title Culture
+            span.__item__description= description
+          .__item
+            h4.__item__title Zoom
+            span.__item__description= description
+        
+        .__buttons
+          a.__button.icon-zoom(href='#')
+          a.__button.icon-download-pdf(href='#')
+
+    a.magazine-item__title(href='#')= title

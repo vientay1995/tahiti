@@ -1,0 +1,134 @@
+.our-company-section {
+  display: flex;
+  flex-wrap: wrap;
+  background: $white;
+  padding-bottom: 60px;
+
+  .page-title {
+    padding: 55px 0 45px;
+  }
+
+  .container {
+    @include bp(mob) {
+      width: 100%;
+    }
+  }
+}
+
+.our-company-item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 50%;
+
+  @include bp(mob) {
+    width: 100%;
+  }
+
+  &__img {
+    position: relative;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    i {
+      color: $white;
+      font-size: 115px;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    &::before {
+      content: '\e940';
+      position: absolute;
+      top: -176px;
+      right: -110px;
+      color: $block-title-color;
+      font-family: $icomoon;
+      font-size: 320px;
+      opacity: 0.4;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: $title-color;
+      opacity: 0.5;
+    }
+
+    .__button {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      bottom: 60px;
+      left: 60px;
+      color: $white;
+      font-family: $ubuntu-light;
+      font-size: 18px;
+      z-index: 2;
+
+      i {
+        font-size: 20px;
+      }
+
+      span {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+    bottom: - 45px;
+    left: 30px;
+    color: $offer-price-1;
+    font-family: $ubuntu-medium;
+    font-size: 24px;
+
+    @include bp(mob) {
+      position: relative;
+      bottom: auto;
+      margin: 20px 0 50px;
+    }
+  }
+
+  &--network {
+    .our-company-item__overlay {
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      .our-company-item__overlay {
+        opacity: 1;
+      }
+    }
+
+    .our-company-item__title {
+      color: $blue;
+
+      @include bp(mob) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

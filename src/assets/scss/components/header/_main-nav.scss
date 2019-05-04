@@ -1,0 +1,391 @@
+.main-nav {
+  background: $white;
+
+  &-inner {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    transition: 0.3s;
+    
+    @include bp(desktop) {
+      flex-direction: row;
+      align-items: center;
+      padding: 0 15px;
+    }
+  }
+
+  &__button {
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 0;
+    cursor: pointer;
+    border: 1px solid $nav-btn;
+    border-radius: 3px;
+    background: none;
+    padding: 18px 15px;
+    opacity: 0.9;
+
+    @include bp(desktop) {
+      display: none;
+    }
+
+    @include bp(tab) {
+      top: 16px;
+    }
+
+    &__icon {
+      display: block;
+      position: relative;
+      width: 25px;
+      height: 2px;
+      background-color: $intro-text-color;
+      border-radius: 3px;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: inherit;
+      }
+
+      &::after {
+        top: auto;
+        bottom: -8px;
+      }
+    }
+  }
+
+  &__overlay {
+    display: block;
+    width: 100%;
+    height: 53px;
+
+    @include bp(desktop) {
+      display: none;
+    }
+
+    @include bp(tab) {
+      height: 72px;
+    }
+  }
+}
+
+.main-nav__link {
+  line-height: 0;
+
+  @include bp(tab) {
+    padding: 15px 0;
+  }
+
+  @include bp(mob) {
+    padding: 15px 0;
+  }
+}
+
+.main-nav__logo {
+  display: flex;
+  align-items: center;
+
+  @include bp(tab) {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 200px;
+    }
+  }
+
+  @include bp(mob) {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 112px;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.main-nav__list {
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+  margin: 0;
+  padding: 10px 0 10px 40px;
+  font-size: 16px;
+
+  @include bp(tab) {
+    position: absolute;
+    flex-direction: column;
+    transition: 0.3s;
+    width: 100%;
+    height: 0;
+    padding: 0 0 30px;
+    opacity: 0;
+    font-size: 0;
+    color: $white;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  @include bp(mob) {
+    position: absolute;
+    flex-direction: column;
+    transition: 0.3s;
+    width: 100%;
+    height: 0;
+    padding: 0;
+    opacity: 0;
+    font-size: 0;
+    color: $white;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  &--active {
+    @include bp(tab) {
+      position: relative;
+      height: auto;
+      z-index: 9;
+      opacity: 1;
+      overflow: auto;
+      visibility: visible;
+      color: $black;
+      font-size: 16px;
+    }
+
+    @include bp(mob) {
+      position: relative;
+      height: auto;
+      z-index: 9;
+      opacity: 1;
+      overflow: auto;
+      visibility: visible;
+      color: $black;
+      font-size: 16px;
+    }
+  }
+}
+
+.main-nav__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 2;
+
+  @include bp(tab) {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  @include bp(mob) {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 20px 15px;
+    color: $black;
+    font-size: inherit;
+    text-transform: uppercase;
+
+    @include bp(tab) {
+      padding: 10px 0;
+    }
+
+    @include bp(mob) {
+      padding: 10px 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: 0.3s;
+      width: 0;
+      height: 1px;
+      background-color: $red;
+    }
+
+    &::after {
+      content: '';
+      position: relative;
+      top: -2px;
+      display: inline-block;
+      border-top: 5px solid $black;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      margin-left: 6px;
+    }
+
+    &:hover {
+      color: $red;
+
+      &::before {
+        width: 70px;
+      }
+
+      &::after {
+        border-top-color: $red;
+      }
+    }
+  }
+
+  &__sub-menu-wrapper {
+    display: flex;
+    position: absolute;
+    top: -100%;
+    right: 0;
+    left: 0;
+    transition: 0.5s;
+    background-color: $sub-nav;
+    padding: 0 80px;
+    opacity: 0;
+    z-index: -1;
+    height: 0;
+
+    @include bp(tab) {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(100%);
+      overflow: auto;
+    }
+
+    @include bp(mob) {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(100%);
+      overflow: auto;
+    }
+  }
+
+  &__sub-menu-close {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+
+    @include bp(desktop) {
+      display: none;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 20px;
+      height: 3px;
+      background: $black;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.main-nav__item--active {
+  .main-nav__item__link {
+    @extend .main-nav__item__link:hover;
+  }
+
+  .main-nav__item__sub-menu-wrapper {
+    opacity: 1;
+    height: auto;
+    padding: 40px 80px;
+
+    @include bp(desktop) {
+      top: 100%;
+    }
+
+    @include bp(tab) {
+      transform: translateX(0);
+      z-index: 99999;
+      padding: 40px 10px;
+    }
+
+    @include bp(mob) {
+      transform: translateX(0);
+      z-index: 99999;
+      padding: 40px 10px;
+    }
+  }
+}
+
+.main-nav__item__sub-menu {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  margin: 0;
+  padding: 0 15px;
+
+  @include bp(mob) {
+    flex-grow: 1;
+    padding: 15px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      position: relative;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      font-family: $ubuntu-medium;
+      font-size: 19px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 1px;
+        background-color: $red;
+      }
+    }
+
+    &__link {
+      margin: 5px 0;
+      color: $intro-text-color;
+      font-size: 16px;
+    }
+  }
+}

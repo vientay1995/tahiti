@@ -1,0 +1,44 @@
+.listing-block {
+  padding-right: 10%;
+
+  @include bp(mob) {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  &-wrapper {
+    padding: 20px 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 0;
+
+    &__text {
+      flex-grow: 2;
+      width: calc(100% - 21px);
+      color: $description-color;
+      font-size: 18px;
+
+      @include bp(mob) {
+        font-size: 14px;
+      }
+    }
+
+    &__icon {
+      position: relative;
+      top: 7px;
+      width: 11px;
+      height: 11px;
+      background: $green;
+      margin-right: 10px;
+
+      @include bp(mob) {
+        top: 5px;
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}

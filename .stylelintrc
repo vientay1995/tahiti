@@ -1,0 +1,19 @@
+{
+  "plugins": [
+    "stylelint-selector-bem-pattern",
+    "stylelint-scss"
+  ],
+  "rules": {
+    "plugin/selector-bem-pattern": {
+      "componentName": "(([a-z0-9]+(?!-$)-?)+)",
+      "componentSelectors": {
+        "initial": "\\.{componentName}(((__|--)(([a-z0-9\\[\\]'=]+(?!-$)-?)+))+)?$"
+      },
+      "ignoreSelectors": [
+        ".*\\.no-js.*",
+        ".*\\.js-.*",
+        ".*\\.lt-ie.*"
+      ]
+    }
+  }
+}

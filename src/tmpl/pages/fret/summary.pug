@@ -1,0 +1,138 @@
+include ../../mixins/mixin-input
+include ../../mixins/mixin-select
+include ../../mixins/mixin-table-cell
+include ./mixin-summary-item
+
+section.fret-section.fret-contact-info.js-form-step.step-4
+    .container
+      .section-inner
+        .white-block.fret-block-with-header
+          h2.fret-header
+            span Résumé
+          .fret-block-with-header-inner
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-contact-information
+              span.block-title__text Coordonnées
+
+            //- Expediteur
+            .form-group.form-group--fret
+              h4.form-group__title Expediteur
+              .row.form-group-inner
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-name', false)
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-first-name', false)
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-business', false)
+                .col-lg-7.col-md-7.fret-form-item
+                  +summary-item('fret-email', false)
+                .col-lg-5.col-md-5.fret-form-item
+                  +summary-item('fret-client-reference', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-portable', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-office', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-home', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-fax', true)
+
+            //- Destinataire
+            .form-group.form-group--fret
+              h4.form-group__title Destinataire
+              .row.form-group-inner
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-name-2', false)
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-first-name-2', false)
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-business-2', false)
+                .col-lg-7.col-md-7.fret-form-item
+                  +summary-item('fret-email-2', false)
+                .col-lg-5.col-md-5.fret-form-item
+                  +summary-item('fret-client-reference-2', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-portable-2', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-office-2', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-home-2', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-fax-2', true)
+            
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-plane
+              span.block-title__text Détails de l’envoi
+            
+            //- Expediteur
+            .form-group.form-group--fret
+              h4.form-group__title Trajet
+              .row.form-group-inner
+                - var islands = ['Tahiti (PPT)', 'Ahe (AHE)', 'Anaa (AAA)', 'Apataki(APK)', 'Aratika (RKA)', 'Arutua (AXR)', 'Hiva Oa (AUQ)']
+                .col-lg-6.col-md-6.fret-form-item
+                  +summary-item('select-fret-departure-island', true)
+                .col-lg-6.col-md-6.fret-form-item
+                  +summary-item('select-fret-arrival-island', true)
+
+            //- Destinataire
+            .form-group.form-group--fret
+              h4.form-group__title Vols souhaités
+              .row.form-group-inner
+                .col-full.fret-form-item
+                  span Merci de nous indiquer un 2e vol dans le cas où votre 1er choix ne serait plus disponible.
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-depart', true)
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-ticket-number', true)
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-depart-time', true)
+
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-depart-2', true)
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-ticket-number-2', true)
+                .col-lg-4.col-md-4.fret-form-item
+                  +summary-item('fret-depart-time-2', true)
+            
+
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-open-box
+              span.block-title__text Description des groupes de colis
+          
+
+            //- Group 1
+            .form-group.form-group--fret
+              h4.form-group__title Groupe 1
+              .row.form-group-inner
+                - var options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6']
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-quantity', true)
+                .col-lg-6.col-md-6.fret-form-item
+                  +summary-item('select-fret-merchandise-type', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('select-fret-special-treatment', true)
+
+                .col-lg-6.col-md-6.fret-form-item
+                  +summary-item('fret-parcel-value', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-parcel-content', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('select-fret-packaging', true)
+
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-length', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-width', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-height', true)
+                .col-lg-3.col-md-3.fret-form-item
+                  +summary-item('fret-total-weight', true)
+                
+
+            //- Buttons
+            .fret-form-buttons
+              .col-lg-9.col-md-9
+              .col-lg-3.col-md-3.fret-form-item
+                button.form-btn(data-to-step='step-2') Suivant
+                span.note-text *Champ obligatoire
+                

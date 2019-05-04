@@ -1,0 +1,140 @@
+.flight-list {
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  overflow: auto;
+  background: $black-transparent;
+  opacity: 0;
+  z-index: -99;
+  color: $description-color;
+  font-family: $ubuntu-light;
+
+  &.shown {
+    opacity: 1;
+    z-index: 999999;
+    
+    .flight-list-inner {
+      transform: translateX(0);
+    }
+  }
+
+  &-inner {
+    position: relative;
+    background: $white;
+    border: 1px solid $green;
+    padding: 20px 40px;
+    width: 100%;
+    max-width: 600px;
+    height: max-content;
+    transition: 0.5s;
+    transform: translateX(120%);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+
+    .js-close-flight-list {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      background: $red;
+      border: none;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 4px;
+        width: 12px;
+        height: 1px;
+        background: $white;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      padding: 15px;
+      color: $green;
+      font-family: $ubuntu-regular;
+      font-size: 17px;
+    }
+
+    &__comment {
+      padding: 15px;
+    }
+
+    thead {
+      tr {
+        background: $input-color;
+      }
+
+      td {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+
+    tbody {
+      tr {
+        cursor: pointer;
+
+        &:hover {
+          background: $green;
+          color: $white;
+        }
+      }
+    }
+
+    td {
+      padding: 10px 5px;
+
+      &:first-child {
+        padding-left: 15px;
+        white-space: nowrap;
+      }
+
+      &:nth-child(2) {
+        width: 140px;
+      }
+
+      &:last-child {
+        width: 160px;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $green;
+    margin-top: 20px;
+    padding: 15px 0;
+
+    &__heading {
+      padding: 15px 0 10px;
+      font-family: $ubuntu-medium;
+      font-size: 14px;
+    }
+
+    &__text {
+      padding-bottom: 15px;
+      text-align: justify;
+    }
+  }
+}

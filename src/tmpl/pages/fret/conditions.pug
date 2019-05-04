@@ -1,0 +1,13 @@
+include ./mixin-condition
+
+section.conditions
+  .container
+    .conditions-inner
+      h2.page-title
+        i.page-title__icon.icon-tatoo-4
+        span.page-title__text Conditions
+      .condition-list
+        - var desc = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam' 
+        +condition('Réservation', desc)
+        +condition('Modification', desc)
+        +condition('Annulation', desc)

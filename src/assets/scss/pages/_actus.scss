@@ -1,0 +1,128 @@
+.actus-categories {
+  padding-top: 30px;
+}
+
+.actus-section {
+  padding-bottom: 40px;
+  background: $white;
+
+  &-inner {
+    @include bp(desktop) {
+      padding: 0 15px;
+    }
+  }
+}
+
+.actus {
+  margin: 0 -15px;
+
+  @include bp(tab) {
+    margin: 0 -10px;
+  }
+
+  @include bp(mob) {
+    margin: 0 -7px;
+  }
+
+  &-inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.actu {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 15px;
+  width: calc(100% / 3);
+
+  @include bp(tab) {
+    padding: 20px 10px;
+  }
+
+  @include bp(mob) {
+    width: calc(100% / 2);
+    padding: 20px 7px;
+  }
+
+  &__image {
+    text-align: center;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    padding: 15px 0 5px;
+
+    @include bp(mob) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__category {
+      transition: 0.3s;
+      padding-right: 10px;
+      color: $button-color;
+      font-family: $ubuntu-bold;
+      font-size: 14px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $button-color;
+        text-decoration: none;
+        opacity: 0.7;
+      }
+    }
+
+    &__date {
+      color: $category-color;
+      font-size: 14px;
+
+      @include bp(mob) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__title {
+    transition: 0.3s;
+    padding-bottom: 20px;
+    color: $block-title-color;
+    font-size: 21px;
+    line-height: 1.3;
+
+    @include bp(mob) {
+      font-family: $ubuntu-bold;
+      font-size: 15px;
+      text-align: justify;
+    }
+
+    &:hover {
+      color: $icon-color-2;
+      text-decoration: none;
+    }
+  }
+
+  &__description {
+    flex-grow: 2;
+    color: $title-color;
+    font-size: 14px;
+
+    @include bp(mob) {
+      font-size: 13px;
+      text-align: justify;
+    }
+  }
+
+  &__buttons {
+    padding-top: 10px;
+  }
+}

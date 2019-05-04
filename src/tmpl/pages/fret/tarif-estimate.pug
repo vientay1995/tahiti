@@ -1,0 +1,44 @@
+include ../../mixins/mixin-input
+include ../../mixins/mixin-select
+include ../../mixins/mixin-table-row
+
+section.fret-section.fret-contact-info.js-form-step.step-3a
+    .container
+      .section-inner
+        .white-block.fret-block
+          .fret-block-inner
+            h3.block-title.block-title--fret
+              i.block-title__icon.icon-calculator
+              span.block-title__text Tarif estimatif
+            
+            .form-group
+              .form-group-inner
+                .col-full.fret-form-item
+                  span Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et do lore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+            //- Destinataire
+            .form-group.form-group--fret
+              h4.form-group__title Vols souhaités
+              .fret-table
+                +table-row('Fret', '100 000 F TTC')
+                +table-row('Frais d’émission de LTA', '100 F TTC')
+                +table-row('Frais de stockage', '10 000 F TTC')
+                +table-row('Lorem ipsum', '00 000 F TTC')
+                +table-row('Lorem ipsum', '00 000 F TTC')
+                +table-row('Lorem ipsum', '00 000 F TTC')
+                +table-row('Lorem ipsum', '00 000 F TTC')
+                +table-row('Montant total', '110 100 F TTC*', 'table-row--total')
+              .fret-note
+                span *Ce tarif est une estimation du coût d’envoi de votre fret suite aux informations entrées précédemment.
+                br 
+                span Il ne peut en aucun cas être considéré comme un devis.
+
+              
+            //- Buttons
+            .form-group.package-description__buttons
+              button.form-btn.form-btn--green(data-to-step='step-3') Retour
+              button.form-btn(data-to-step='step-4') Envoyer la demande
+            
+            .form-group.package-description__buttons
+              div
+              button.button-with-icon Effectuer une nouvelle simulation
